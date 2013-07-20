@@ -1,6 +1,7 @@
 ## Rapid Protype Sinatra (RPS) - Boiler Plate  
 
-*A boiler plate which can be used to quickly spin-up Sinatra web-framework apps.*
+*A boiler plate which can be used to quickly spin-up Sinatra web-framework apps.*  
+By default, this boilerplate comes loaded with the [Flat-UI CSS Theme](designmodo.github.io/Flat-UI/‎).
 
 ---
 
