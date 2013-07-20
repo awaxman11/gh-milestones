@@ -1,9 +1,9 @@
-# Include all models in lib/*/ folders.
-require_relative 'environment'
-
 # Require all Ruby gems located in Gemfile.
 require 'bundler'
 Bundler.require
+
+# Include all models in lib/*/ folders.
+require_relative 'environment'
 
 # Rename 'AppName' to name of choice.
 # => Don't forget to update config.ru as well.
