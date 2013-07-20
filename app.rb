@@ -1,30 +1,39 @@
+# Include all models in lib/*/ folders.
+require_relative 'environment'
+
+# Pre-compile Gemfile before running application.
 require 'bundler'
 Bundler.require
-
-Dir.glob('./lib/*.rb') do |model|
-  require model
-end
 
 module Name
   class App < Sinatra::Application
 
-    #configure
+    # Configure Options
+    # => set folders of application.
+
     configure do
       set :root, File.dirname(__FILE__)
       set :public_folder, 'public'
     end
 
-    #database
+    # Database
+    # => delete if not needed.
+
     set :database, "sqlite3:///database.db"
 
-    #filters
+    # Filters
+    # => add route filters if necessary.
 
-    #routes
+    # Routes
+    # => define controller actions for application.
+
     get '/' do
       erb :index
     end
 
-    #helpers
+    # Helpers
+    # => define helper methods for application.
+
     helpers do
       def partial(file_name)
         erb file_name, :layout => false
