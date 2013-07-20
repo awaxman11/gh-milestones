@@ -1,5 +1,5 @@
-# Rename 'MyModel' to name of choice.
+# Rename 'ModelName' to name of choice.
 
-class MyModel < ActiveRecord::Base
+class ModelName < ActiveRecord::Base
 
 end

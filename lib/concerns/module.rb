@@ -1,5 +1,5 @@
-# Rename 'MyModule' to name of choice.
+# Rename 'ModuleName' to name of choice.
 
-module MyModule
+module ModuleName
 
 end

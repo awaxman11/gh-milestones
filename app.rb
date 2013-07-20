@@ -1,15 +1,18 @@
 # Include all models in lib/*/ folders.
 require_relative 'environment'
 
-# Pre-compile Gemfile before running application.
+# Require all Ruby gems located in Gemfile.
 require 'bundler'
 Bundler.require
 
-module Name
+# Rename 'AppName' to name of choice.
+# => Don't forget to update config.ru as well.
+
+module AppName
   class App < Sinatra::Application
 
     # Configure Options
-    # => set folders of application.
+    # => set default paths of application.
 
     configure do
       set :root, File.dirname(__FILE__)
