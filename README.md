@@ -1,16 +1,17 @@
 ## Rapid Protype Sinatra (RPS) - Boiler Plate  
 
-A Sinatra web-framework which can be used to quickly spin-up Sinatra apps.
+*A boiler plate which can be used to quickly spin-up Sinatra web-framework apps.*
 
 ---
-
-**Note**:  
 
 The baseline for this project comes from two projects, made with love by two amazing people:
 
 * **[Playlister-RB](https://github.com/aviflombaum/playlister-rb/tree/sinatra-app)** by [Avi Flombaum](www.github.com/aviflombaum)  
 
 * **[Ratpack](https://github.com/ashleygwilliams/ratpack)** by [Ashley Williams](www.github.com/ashleygwilliams)
+
+Let me know if you have any suggestions via comments / pull request!
+
 
 ### Information and Resources
 
