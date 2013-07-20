@@ -6,9 +6,9 @@
 
 The baseline for this project comes from two projects, made with love by two amazing people:
 
-* **[Playlister-RB](https://github.com/aviflombaum/playlister-rb/tree/sinatra-app)** by [Avi Flombaum](www.github.com/aviflombaum)  
+- **[Playlister-RB](https://github.com/aviflombaum/playlister-rb/tree/sinatra-app)** by [Avi Flombaum](www.github.com/aviflombaum)  
 
-* **[Ratpack](https://github.com/ashleygwilliams/ratpack)** by [Ashley Williams](www.github.com/ashleygwilliams)
+- **[Ratpack](https://github.com/ashleygwilliams/ratpack)** by [Ashley Williams](www.github.com/ashleygwilliams)
 
 Let me know if you have any suggestions via comments / pull request!
 
@@ -24,12 +24,25 @@ Here is general information and resources to be used with the boilerplate:
 3. visit `localhost:9393`
 
 #### Gemfile
+
+Here are the gems included with this boiler plate:
+
+
+** Framework **  
+
 - [sinatra](http://www.sinatrarb.com/): web framework
 - [sqlite3](https://github.com/luislavena/sqlite3-ruby): Database
 - [activerecord](http://guides.rubyonrails.org/active_record_querying.html): ORM
 - [sinatra-activerecord](https://github.com/bmizerany/sinatra-activerecord)
 - [rake](http://rake.rubyforge.org/)
 
-#### Development
-   * [shotgun](https://github.com/rtomayko/shotgun)
-   * [tux](http://tagaholic.me/2011/04/10/tux-a-sinatra-console.html)
+** Debug **  
+
+- [better_errors](https://github.com/charliesome/better_errors)
+- [debugger](https://github.com/cldwalker/debugger)
+
+** Development **  
+
+- [shotgun](https://github.com/rtomayko/shotgun)
+- [tux](http://tagaholic.me/2011/04/10/tux-a-sinatra-console.html)
+
