@@ -5,7 +5,7 @@ By default, this boiler plate comes loaded with the [Flat-UI CSS Theme](designmo
 
 ---
 
-The baseline for this project comes from two projects, made with love by two amazing people:
+The baseline for this repository comes from two projects, which were made with love by two amazing people:
 
 - **[Playlister-RB](https://github.com/aviflombaum/playlister-rb/tree/sinatra-app)** by [Avi Flombaum](www.github.com/aviflombaum)  
 
@@ -31,9 +31,9 @@ Here are the gems included with this boiler plate:
 
 **Framework**  
 
-- [sinatra](http://www.sinatrarb.com/): web framework
-- [sqlite3](https://github.com/luislavena/sqlite3-ruby): Database
-- [activerecord](http://guides.rubyonrails.org/active_record_querying.html): ORM
+- [sinatra](http://www.sinatrarb.com/)
+- [sqlite3](https://github.com/luislavena/sqlite3-ruby)
+- [activerecord](http://guides.rubyonrails.org/active_record_querying.html)
 - [sinatra-activerecord](https://github.com/bmizerany/sinatra-activerecord)
 - [rake](http://rake.rubyforge.org/)
 
