@@ -29,7 +29,7 @@ Here is general information and resources to be used with the boilerplate:
 Here are the gems included with this boiler plate:
 
 
-** Framework **  
+**Framework**  
 
 - [sinatra](http://www.sinatrarb.com/): web framework
 - [sqlite3](https://github.com/luislavena/sqlite3-ruby): Database
@@ -37,12 +37,12 @@ Here are the gems included with this boiler plate:
 - [sinatra-activerecord](https://github.com/bmizerany/sinatra-activerecord)
 - [rake](http://rake.rubyforge.org/)
 
-** Debug **  
+**Debug**  
 
 - [better_errors](https://github.com/charliesome/better_errors)
 - [debugger](https://github.com/cldwalker/debugger)
 
-** Development **  
+**Development**  
 
 - [shotgun](https://github.com/rtomayko/shotgun)
 - [tux](http://tagaholic.me/2011/04/10/tux-a-sinatra-console.html)
