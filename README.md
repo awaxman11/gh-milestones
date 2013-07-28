@@ -5,9 +5,7 @@ By default, this boiler plate comes loaded with the [Flat-UI CSS Theme](designmo
 
 ---
 
-The baseline for this repository comes from two projects, which were made with love by two amazing people:
-
-- **[Playlister-RB](https://github.com/aviflombaum/playlister-rb/tree/sinatra-app)** by [Avi Flombaum](www.github.com/aviflombaum)  
+The baseline for this repository comes from a very awesome person:
 
 - **[Ratpack](https://github.com/ashleygwilliams/ratpack)** by [Ashley Williams](www.github.com/ashleygwilliams)
 
