@@ -26,6 +26,10 @@ Here is general information and resources to be used with the boilerplate:
 
 Here are the gems included with this boiler plate:
 
+#### Security and Authentication
+
+- Rename `config/authentication.example.rb` to `config/authentication.rb`
+- Add your API and authentication tokens etc. to `config/authentication.rb`
 
 **Framework**  
 
