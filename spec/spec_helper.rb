@@ -11,7 +11,7 @@ set :raise_errors, true
 set :logging, false
 
 def app
-  SinatraDiveBarny::App 
+  AppName::App 
 end
 
 RSpec.configure do |config|
