@@ -1,6 +1,9 @@
-# Add rake tasks here. Or add them within the tasks folder
+# Add rake tasks here.
+# They can also be added in the ./tasks folder.
+
+require "sinatra/activerecord/rake"
 require "./app"
+
 Dir.glob("./tasks/*.rb").each do |file|
   require file
 end
-require "sinatra/activerecord/rake"
