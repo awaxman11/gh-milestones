@@ -15,15 +15,15 @@ module AppName
   class App < Sinatra::Application
 
     # Configure Options
-    # => set configuration options for application.
+    # => set configuration options.
 
-    # ==> Set default paths of application.
+    # ==> Set default paths for static content.
     configure do
       set :root, File.dirname(__FILE__)
       set :public_folder, 'public'
     end
 
-    # Include debug capabilities in development.
+    # ==> Include debug capabilities in development.
     configure :development do
       require 'better_errors'
       require 'binding_of_caller'
@@ -37,24 +37,29 @@ module AppName
     end
 
     # Database
-    # => delete if not needed.
+    # => add database functionality.
     set :database, "sqlite3:///database.db"
 
     # Filters
-    # => add route filters if necessary.
+    # => add route filters.
 
     # Routes
-    # => define controller actions for application.
+    # => define controller actions.
+
+    # ==> Render index page.
     get '/' do
       erb :index
     end
 
     # Helpers
-    # => define helper methods for application.
+    # => define helper methods.
+
     helpers do
+      # ==> Enable partials in the initial form.
       def partial(file_name)
         erb file_name, :layout => false
       end
     end
+
   end
 end
