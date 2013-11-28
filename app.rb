@@ -38,7 +38,7 @@ module AppName
 
     # Database
     # => add database functionality.
-    set :database, "sqlite3:///database.db"
+    set :database, 'sqlite3:///database.db'
 
     # Filters
     # => add route filters.
