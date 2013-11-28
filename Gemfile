@@ -1,21 +1,19 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "sinatra"
-gem "sqlite3"
-gem "activerecord"
-gem "sinatra-activerecord"
-gem "rake"
-
-group :debug do
-	gem "better_errors"
-	gem "debugger"
-end
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'sinatra-contrib'
+gem 'sinatra'
+gem 'sqlite3'
+gem 'rake'
 
 group :development do
-  gem "shotgun"
-  gem "tux"
+	gem 'better_errors'
+	gem 'binding_of_caller'
+	gem 'pry-debugger'
+  gem 'tux'
+  gem 'webrick', '~> 1.3.1' 
 end
-
 group :test do  
-  gem "rspec"
+  gem 'rspec'
 end
