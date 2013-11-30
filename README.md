@@ -1,4 +1,4 @@
-## Rapid Prototyping in Sinatra (RPS) - Boiler Plate  
+## Swoonatra - Sinatra MVC Boiler Plate  
 
 *A boiler plate which can be used to quickly spin-up Sinatra web-framework apps.*  
 By default, this boiler plate comes loaded with the [Flat-UI CSS Theme](designmodo.github.io/Flat-UI/‎).
@@ -10,7 +10,6 @@ The baseline for this repository comes from a very awesome person:
 - **[Ratpack](https://github.com/ashleygwilliams/ratpack)** by [Ashley Williams](www.github.com/ashleygwilliams)
 
 Let me know if you have any suggestions via comments / pull request!
-
 
 ### Information and Resources
 
