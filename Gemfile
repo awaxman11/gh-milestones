@@ -1,19 +1,20 @@
 source 'https://rubygems.org'
 
+gem 'sinatra'
+gem 'sinatra-contrib'
 gem 'activerecord'
 gem 'sinatra-activerecord'
-gem 'sinatra-contrib'
-gem 'sinatra'
+
 gem 'sqlite3'
 gem 'rake'
 
-group :development do
+group :development, :test do
 	gem 'better_errors'
 	gem 'binding_of_caller'
 	gem 'pry-debugger'
   gem 'tux'
-  gem 'webrick', '~> 1.3.1' 
-end
-group :test do  
-  gem 'rspec'
+
+  gem 'capybara'
+  gem 'factory_girl'
+	gem 'rspec'
 end
