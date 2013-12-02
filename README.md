@@ -17,34 +17,45 @@ Here is general information and resources to be used with the boilerplate:
 
 #### Up and Running
 
+`git clone` the repository and `rm -rf .git` folder. `git init` folder, and then:
+
 1. `bundle install`
-2. `shotgun`
-3. visit `localhost:9393`
-
-#### Gemfile
-
-Here are the gems included with this boiler plate:
+2. `rackup`
+3. visit `localhost:9292`
 
 #### Security and Authentication
 
 - Rename `config/authentication.example.rb` to `config/authentication.rb`
 - Add your API and authentication tokens etc. to `config/authentication.rb`
 
+#### Gemfile
+
+Here are the gems included with this boiler plate:
+
 **Framework**  
 
 - [sinatra](http://www.sinatrarb.com/)
-- [sqlite3](https://github.com/luislavena/sqlite3-ruby)
+- [sinatra-contrib](https://github.com/sinatra/sinatra-contrib)
 - [activerecord](http://guides.rubyonrails.org/active_record_querying.html)
 - [sinatra-activerecord](https://github.com/bmizerany/sinatra-activerecord)
+- [sqlite3](https://github.com/luislavena/sqlite3-ruby)
 - [rake](http://rake.rubyforge.org/)
+
+---
 
 **Debug**  
 
 - [better_errors](https://github.com/charliesome/better_errors)
-- [debugger](https://github.com/cldwalker/debugger)
+- [binding_of_caller](https://github.com/banister/binding_of_caller)
+- [pry-debugger](https://github.com/nixme/pry-debugger)
 
 **Development**  
 
-- [shotgun](https://github.com/rtomayko/shotgun)
-- [tux](http://tagaholic.me/2011/04/10/tux-a-sinatra-console.html)
+- [tux](https://github.com/cldwalker/tux)
 
+
+**Test**
+
+- [capybara](www.test.com)
+- [factory_girl](www.test.com)
+- [rspec](www.test.com)
