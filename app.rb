@@ -6,6 +6,9 @@ Bundler.require
 require 'sinatra/base'
 require 'sinatra/reloader'
 
+# AutoEscape HTML vis erubis
+set :erb, :escape_html => true
+
 # Include all models in lib/*/ folders.
 require_relative 'environment'
 
