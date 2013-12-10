@@ -5,8 +5,6 @@ gem 'sinatra-contrib'				# Allow for Reloader.
 gem 'activerecord'					# ActiveRecord capability.
 gem 'sinatra-activerecord'	# Sinatra ActiveRecord.
 
-gem 'erubis'								# Auto-escape HTML.
-
 gem 'rake'									# Rake task support.
 gem 'sqlite3'								# SQLite3 support.
 

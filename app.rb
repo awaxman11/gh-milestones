@@ -6,9 +6,6 @@ Bundler.require
 require 'sinatra/base'
 require 'sinatra/reloader'
 
-# AutoEscape HTML vis erubis
-set :erb, :escape_html => true
-
 # Include all models in lib/*/ folders.
 require_relative 'environment'
 
@@ -61,6 +58,11 @@ module AppName
       # ==> Enable partials in the initial form.
       def partial(file_name)
         erb file_name, :layout => false
+      end
+
+      def h(text)
+        # ==> Capability to escape HTML.
+        Rack::Utils.escape_html(text)
       end
     end
 
