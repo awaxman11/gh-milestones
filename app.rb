@@ -10,7 +10,7 @@ require 'sinatra/reloader'
 require_relative 'environment'
 
 # Rename 'AppName' to name of choice.
-# => Don't forget to update config.ru as well.
+# => Update 'AppName' : config.ru // spec_helper.rb
 module AppName
   class App < Sinatra::Application
 
