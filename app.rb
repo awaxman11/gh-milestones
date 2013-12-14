@@ -65,6 +65,5 @@ module AppName
         Rack::Utils.escape_html(text)
       end
     end
-
   end
 end
