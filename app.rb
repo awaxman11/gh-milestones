@@ -38,7 +38,7 @@ module AppName
     # => define helper methods.
 
     helpers do
-      # ==> Enable partials in the initial form.
+      # ==> Enable partials in all templates.
       def partial(file_name)
         erb file_name, :layout => false
       end
