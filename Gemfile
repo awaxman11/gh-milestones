@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'sinatra'								# Core Sinatra library.
 gem 'sinatra-contrib'				# Allow for Reloader.
@@ -10,7 +11,7 @@ gem 'sinatra-redirect-with-flash'
 gem 'rake'									# Rake task support.
 
 group :development, :test do
-	gem 'sqlite3'							# SQLite3 support.
+	gem 'sqlite3'							# SQLite3 in development.
 	gem 'tux'									# CLI for models/methods.
 
 	gem 'better_errors'				# Better error output.
@@ -23,5 +24,5 @@ group :development, :test do
 end
 
 group :production do
-	gem 'pg'
+	gem 'pg'									# PostgreSQL in production.
 end
