@@ -19,9 +19,11 @@ Here is general information and resources to be used with the boilerplate:
 
 `git clone` the repository and `rm -rf .git` folder. `git init` folder, and then:
 
-1. `bundle install`
-2. `rackup`
-3. visit `localhost:9292`
+1. Ensure you have PostgreSQL installed on your machine.
+	- If not installed and on a MAC, use Homebrew: `brew install postgresql`
+2. `bundle install`
+3. `rackup`
+4. visit `localhost:9292`
 
 #### Security and Authentication
 
