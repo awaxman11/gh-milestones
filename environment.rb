@@ -21,7 +21,7 @@ end
 
 # Database setup.
 configure :development do
- set :database, 'sqlite:///development.db'
+ set :database, 'sqlite:///db/development.sqlite3'
  set :show_exceptions, true
 end
 
