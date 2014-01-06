@@ -8,7 +8,6 @@ gem 'activerecord'					# ActiveRecord capability.
 gem 'sinatra-activerecord'
 gem 'sinatra-flash'					# Sinatra flash capability.
 gem 'sinatra-redirect-with-flash'
-gem 'rake'									# Rake task support.
 
 group :development, :test do
 	gem 'sqlite3'							# SQLite3 in development.
