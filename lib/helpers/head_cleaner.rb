@@ -56,7 +56,7 @@ module Sinatra
         css << args
         css << @css if @css
         css.flatten.uniq.map do |stylesheet| 
-          "<link href=\"/#{stylesheet}.css\" media=\"screen, projection\" rel=\"stylesheet\" />"
+          "<link href=\"/css/#{stylesheet}.css\" media=\"screen, projection\" rel=\"stylesheet\" />"
         end.join    
     end
 
