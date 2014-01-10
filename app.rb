@@ -19,9 +19,8 @@ module AppName
       set :public_folder, 'public'
     end
 
-    # Database
-    # => add database functionality.
-    set :database, 'sqlite3:///database.db'
+    # ==> Set global JavaScript files for project.
+    set :javascripts, ['http://code.jquery.com/jquery-latest.min.js']
 
     # Filters
     # => add route filters.
