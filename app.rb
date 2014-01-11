@@ -20,7 +20,7 @@ module AppName
     end
 
     # ==> Set global JavaScript files for project.
-    set :javascripts, ['http://code.jquery.com/jquery-latest.min.js']
+    set :javascripts, [:jquery]
 
     # Filters
     # => add route filters.
