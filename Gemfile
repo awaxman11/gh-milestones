@@ -9,6 +9,8 @@ gem 'sinatra-activerecord'
 gem 'sinatra-flash'					# Sinatra flash capability.
 gem 'sinatra-redirect-with-flash'
 
+gem 'rake'
+
 group :development, :test do
 	gem 'sqlite3'							# SQLite3 in development.
 	gem 'tux'									# CLI for models/methods.
