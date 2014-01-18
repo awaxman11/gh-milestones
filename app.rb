@@ -1,8 +1,9 @@
-# Require all Ruby gems located in Gemfile.
-require 'bundler'
-Bundler.require
-
-# Include all models in lib/*/ folders.
+# Include:
+# => Authentication File
+# => Concerns | Helpers | Models
+# => Database Configuration
+# => Debug Tools
+# => Sinatra Libraries
 require_relative 'environment'
 
 # Rename 'AppName' to name of choice.
