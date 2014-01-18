@@ -4,6 +4,7 @@ require './config/authentication' if File.exists?('./config/authentication.rb')
 # Include Sinatra Libraries
 require 'sinatra'
 require 'sinatra/reloader'
+require 'active_record'
 
 # Include Debug Capabilities in Development
 configure :development do
