@@ -73,16 +73,28 @@ Here are the gems included with this template:
 - [binding_of_caller](https://github.com/banister/binding_of_caller)
 - [pry-debugger](https://github.com/nixme/pry-debugger)
 
+---
+
 **Test**
 
 - [capybara](www.test.com)
 - [factory_girl](www.test.com)
 - [rspec](www.test.com)
 
+---
+
 **Development**  
 
 - [tux](https://github.com/cldwalker/tux)
 
+---
+
 **Production**  
 
 - [pg](https://github.com/ged/ruby-pg)
+
+#### > Code Status
+  
+[![Code Climate](https://codeclimate.com/github/CarlosPlusPlus/swoonatra.png)](https://codeclimate.com/github/CarlosPlusPlus/swoonatra)  
+[![Dependency Status](https://gemnasium.com/CarlosPlusPlus/swoonatra.png)](https://gemnasium.com/CarlosPlusPlus/swoonatra)
+
