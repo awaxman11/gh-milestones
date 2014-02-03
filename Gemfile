@@ -13,7 +13,7 @@ gem 'rake'
 
 group :development, :test do
 	gem 'sqlite3'							# SQLite3 in development.
-	gem 'tux'									# CLI for models/methods.
+	gem 'tux'									# CLI for models / methods.
 
 	gem 'better_errors'				# Better error output.
 	gem 'binding_of_caller'		# CLI error output.

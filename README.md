@@ -1,13 +1,13 @@
 ## Swoonatra - Sinatra Template for Web Apps
 
-##### A Sinatra template for spinning up Heroku-ready Sinatra web applications.
+#### A Sinatra template for spinning up Heroku-ready Sinatra web applications.
  
 New to the **Sinatra DSL // Ruby Web Framework**?  
 Check out the website **[HERE](http://www.sinatrarb.com/)** and **[GitHub Repo](https://github.com/sinatra/sinatra)**.
 
 At a high level, this template comes with the following features:  
 
-- A **modular** Sinatra application with **helpers** built in to get you started fast. 
+- A **modular** Sinatra app using **Ruby 2.0** with **helpers** built in to get you started fast. 
 - Local development using **SQLite3** and production using **PostgreSQL** on Heroku.
 - Support for **ActiveRecord** model inheritance and database migrations.
 - **Authentication Support** for **API**, **OAuth Keys**, or any sensitive information.
@@ -39,16 +39,20 @@ In order to use this template:
 6. Run `rackup` to start your local server.
 7. Visit `localhost:9292` in your favorite browswer.
 
-All done!
+All set and good to go!
 
-#### Security and Authentication
+#### > Security and Authentication
+
+In order to use **API Keys**, **OAuth Keys**, or **sensitive information**:
 
 - Rename `config/authentication.example.rb` to `config/authentication.rb`
 - Add your API and authentication tokens etc. to `config/authentication.rb`
 
-#### Gemfile
+This will allow you to access them everywhere via the **ENV** hash.
 
-Here are the gems included with this boiler plate:
+#### > Gemfile
+
+Here are the gems included with this template:
 
 **Framework**  
 
@@ -56,6 +60,8 @@ Here are the gems included with this boiler plate:
 - [sinatra-contrib](https://github.com/sinatra/sinatra-contrib)
 - [activerecord](http://guides.rubyonrails.org/active_record_querying.html)
 - [sinatra-activerecord](https://github.com/bmizerany/sinatra-activerecord)
+- [sinatra-flash](https://github.com/SFEley/sinatra-flash)
+- [sinatra-redirect-with-flash](https://github.com/vast/sinatra-redirect-with-flash)
 - [sqlite3](https://github.com/luislavena/sqlite3-ruby)
 - [rake](http://rake.rubyforge.org/)
 
@@ -67,13 +73,16 @@ Here are the gems included with this boiler plate:
 - [binding_of_caller](https://github.com/banister/binding_of_caller)
 - [pry-debugger](https://github.com/nixme/pry-debugger)
 
-**Development**  
-
-- [tux](https://github.com/cldwalker/tux)
-
-
 **Test**
 
 - [capybara](www.test.com)
 - [factory_girl](www.test.com)
 - [rspec](www.test.com)
+
+**Development**  
+
+- [tux](https://github.com/cldwalker/tux)
+
+**Production**  
+
+- [pg](https://github.com/ged/ruby-pg)
