@@ -1,29 +1,45 @@
-## Swoonatra - Sinatra MVC Boiler Plate  
+## Swoonatra - Sinatra Template for Web Apps
 
-*A boiler plate which can be used to quickly spin-up Sinatra web-framework apps.*  
-By default, this boiler plate comes loaded with the [Flat-UI CSS Theme](designmodo.github.io/Flat-UI/‎).
+##### A Sinatra template for spinning up Heroku-ready Sinatra web applications.
+ 
+New to the **Sinatra DSL // Ruby Web Framework**?  
+Check out the website **[HERE](http://www.sinatrarb.com/)** and **[GitHub Repo](https://github.com/sinatra/sinatra)**.
+
+At a high level, this template comes with the following features:  
+
+- A **modular** Sinatra application with **helpers** built in to get you started fast. 
+- Local development using **SQLite3** and production using **PostgreSQL** on Heroku.
+- Support for **ActiveRecord** model inheritance and database migrations.
+- **Authentication Support** for **API**, **OAuth Keys**, or any sensitive information.
+- Debugging tools like **Better Errors**, **Pry Debugger**, and **Sinatra Reloader**.
+- **RSpec Integration** for testing your application, models, and concerns.
+
+I've written in *comments* to explain all parts of the code base for you.  
+This template *does not* come with any UI in place. That's for you to decide!
 
 ---
 
-The baseline for this repository comes from a very awesome person:
-
-- **[Ratpack](https://github.com/ashleygwilliams/ratpack)** by [Ashley Williams](www.github.com/ashleygwilliams)
-
+This project is made with <3 and uses a collection of tips and tricks.  
 Let me know if you have any suggestions via comments / pull request!
 
 ### Information and Resources
 
-Here is general information and resources to be used with the boilerplate:
+Here are a few sections on how you can get started with this template.
 
-#### Up and Running
+#### > Up and Running
 
-`git clone` the repository and `rm -rf .git` folder. `git init` folder, and then:
+In order to use this template:
 
-1. Ensure you have PostgreSQL installed on your machine.
-	- If not installed and on a MAC, use Homebrew: `brew install postgresql`
-2. `bundle install`
-3. `rackup`
-4. visit `localhost:9292`
+1.  Clone the repository via: `git clone git@github.com:CarlosPlusPlus/swoonatra.git`.
+2.  `cd` into the repository and remove the .git folder: `rm -rf .git` folder.
+3.  Perform a `git init` folder, or set as a remote to a respository already on GitHub.
+4.  Ensure you have **PostgreSQL** installed on your machine.
+	- If not installed and on a MAC, use Homebrew via Terminal: `brew install postgresql`
+5. Run a `bundle install` to install all gem dependencies.
+6. Run `rackup` to start your local server.
+7. Visit `localhost:9292` in your favorite browswer.
+
+All done!
 
 #### Security and Authentication
 
