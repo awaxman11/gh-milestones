@@ -26,6 +26,11 @@ configure :development do
  set :show_exceptions, true
 end
 
+configure :test do
+ set :database, 'sqlite:///db/test.sqlite3'
+ set :show_exceptions, true
+end
+
 configure :production do
  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///localhost/mydb')
 
