@@ -10,6 +10,7 @@ require_relative 'environment'
 # => Update 'AppName' : config.ru // spec_helper.rb
 module AppName
   class App < Sinatra::Application
+    register Sinatra::ActiveRecordExtension
 
     # Configure Options
     # => set configuration options.
