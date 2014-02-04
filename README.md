@@ -93,7 +93,7 @@ Here are the gems included with this template:
 
 - [pg](https://github.com/ged/ruby-pg)
 
-#### > Code Status
+### Code Status
 
 [![Build Status](https://travis-ci.org/CarlosPlusPlus/swoonatra.png?branch=master)](https://travis-ci.org/CarlosPlusPlus/swoonatra)    
 [![Code Climate](https://codeclimate.com/github/CarlosPlusPlus/swoonatra.png)](https://codeclimate.com/github/CarlosPlusPlus/swoonatra)  
