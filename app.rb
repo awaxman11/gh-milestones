@@ -12,6 +12,30 @@ module AppName
   class App < Sinatra::Application
     register Sinatra::ActiveRecordExtension
 
+    # Database Configuration and Setup
+    configure :development do
+     set :database, 'sqlite:///db/development.sqlite3'
+     set :show_exceptions, true
+    end
+
+    configure :test do
+     set :database, 'sqlite:///db/test.sqlite3'
+     set :show_exceptions, true
+    end
+
+    configure :production do
+     db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///localhost/mydb')
+
+     ActiveRecord::Base.establish_connection(
+       :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+       :host     => db.host,
+       :username => db.user,
+       :password => db.password,
+       :database => db.path[1..-1],
+       :encoding => 'utf8'
+     )
+    end
+
     # Configure Options
     # => set configuration options.
 
