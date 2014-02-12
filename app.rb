@@ -15,8 +15,6 @@ module AppName
     register Sinatra::ActiveRecordExtension
 
     # Configure Options
-    # => set configuration options.
-
     # ==> Set default paths for static content.
     configure do
       set :root, File.dirname(__FILE__)
