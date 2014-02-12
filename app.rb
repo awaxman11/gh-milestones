@@ -1,18 +1,18 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
-# Include:
-# => Authentication File
-# => Concerns | Helpers | Models
-# => Database Configuration
-# => Debug Tools
-require_relative 'environment'
-
 # Rename 'AppName' to name of choice.
 # => Update 'AppName' : config.ru // spec_helper.rb
 module AppName
   class App < Sinatra::Application
-    # register Sinatra::ActiveRecordExtension
+    register Sinatra::ActiveRecordExtension
+
+    # Include:
+    # => Authentication File
+    # => Concerns | Helpers | Models
+    # => Database Configuration
+    # => Debug Tools
+    require_relative 'environment'
 
     # Configure Options
     # => set configuration options.
