@@ -8,5 +8,8 @@
 # Ignore local databases.
 /db/*.sqlite3
 
+# Ignore database.yml file.
+/config/database.yml
+
 # Ignore configuration file
 /config/authentication.rb

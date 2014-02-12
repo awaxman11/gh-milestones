@@ -41,6 +41,13 @@ In order to use this template:
 
 All set and good to go!
 
+#### > Database Setup
+
+The SQLite3 **development** database will be generated when you first run `rackup`, and the **SQLite3** database will be created when you first run `rspec`.
+
+In order to customize your local databases:  
+In the `config` folder: `cp database.example.yml database.yml`
+
 #### > Security and Authentication
 
 In order to use **API Keys**, **OAuth Keys**, or **sensitive information**:
