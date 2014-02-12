@@ -119,7 +119,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
   better_errors
   binding_of_caller
   capybara
