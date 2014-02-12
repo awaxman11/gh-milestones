@@ -7,7 +7,6 @@ configure :development do
 
   require 'better_errors'
   require 'binding_of_caller'
-  require 'pry-debugger'
 
   use BetterErrors::Middleware
   BetterErrors.application_root = File.expand_path('..', __FILE__)
@@ -26,9 +25,6 @@ configure :test do
  set :database, 'sqlite:///db/test.sqlite3'
  set :show_exceptions, true
 end
-
-puts "DB connections about to be established."
-puts "ENV['DATABASE_URL'] = #{ ENV['DATABASE_URL'] || "DOES NOT EXIST"}"
 
 configure :production do
  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///localhost/mydb')

@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/activerecord'
+require 'active_record'
 
 # Include:
     # => Authentication File
@@ -7,6 +7,8 @@ require 'sinatra/activerecord'
     # => Database Configuration
     # => Debug Tools
 require_relative 'environment'
+
+require 'sinatra/activerecord'
 
 # Rename 'AppName' to name of choice.
 # => Update 'AppName' : config.ru // spec_helper.rb
