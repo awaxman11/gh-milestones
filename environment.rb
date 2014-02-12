@@ -15,7 +15,7 @@ configure :development do
   also_reload 'lib/*/*.rb'
 end
 
-# Database Configuration and Setup
+# Database Configuration & Setup
 configure :development do
   set :database, 'sqlite:///db/development.sqlite3'
   set :show_exceptions, true
