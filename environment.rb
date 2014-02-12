@@ -27,6 +27,9 @@ configure :test do
  set :show_exceptions, true
 end
 
+puts "DB connections about to be established."
+puts "ENV['DATABASE_URL'] = #{ ENV['DATABASE_URL'] || "DOES NOT EXIST"}"
+
 configure :production do
  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///localhost/mydb')
 
