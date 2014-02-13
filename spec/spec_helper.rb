@@ -1,6 +1,5 @@
-require File.join(File.expand_path(File.dirname(__FILE__)), '/../app.rb')
-
 ENV['RACK_ENV'] = 'test'
+require File.join(File.expand_path(File.dirname(__FILE__)), '/../app.rb')
 
 require 'sinatra'
 require 'rack/test'
