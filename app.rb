@@ -1,5 +1,13 @@
-require 'sinatra'
-require 'sinatra/activerecord'
+# require 'sinatra'
+# require 'sinatra/activerecord'
+
+require 'bundler'
+
+if ENV['RACK_ENV']
+  Bundler.require(:default, ENV['RACK_ENV'])
+else
+  Bundler.require(:default)
+end
 
 # Include:
     # => Authentication File
@@ -12,7 +20,7 @@ require_relative 'environment'
 # => Update 'AppName' : config.ru // spec_helper.rb
 module AppName
   class App < Sinatra::Application
-    register Sinatra::ActiveRecordExtension
+    # register Sinatra::ActiveRecordExtension
 
     # Configure Options
     # ==> Set default paths for static content.
