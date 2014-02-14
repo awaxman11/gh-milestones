@@ -1,4 +1,4 @@
-ENV['RACK_ENV'] = 'test'
+ENV['RACK_ENV'] ||= 'test'
 require File.join(File.expand_path(File.dirname(__FILE__)), '/../app.rb')
 
 require 'sinatra'
