@@ -5,7 +5,7 @@ gem 'sinatra'								# Core Sinatra library.
 gem 'sinatra-contrib'				# Allow for Reloader.
 
 gem 'activerecord'					# ActiveRecord capability.
-# gem 'sinatra-activerecord'
+gem 'sinatra-activerecord'
 gem 'sinatra-flash'					# Sinatra flash capability.
 gem 'sinatra-redirect-with-flash'
 
