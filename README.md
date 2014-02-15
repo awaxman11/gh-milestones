@@ -47,10 +47,13 @@ All set and good to go for local development!
 
 #### > Database Setup
 
-The SQLite3 **development** database will be generated when you first run `rackup`, and the **SQLite3** database will be created when you first run `rspec`.
+The SQLite3 **development** database will be generated when you first run `rackup`.  
+This is located in: `db/development.sqlite3`
 
-In order to customize your local databases:  
-In the `config` folder: `cp database.example.yml database.yml`
+The SQLite3 **test** database will be generated when you first run `rspec`.  
+This is located in: `db/test.sqlite3`
+
+In **production**, the database will connect with the Heroku **postgres** database defined by the `ENV[DATABASE_URL]` variable. It should be automatically connected upon deploy.
 
 #### > Security and Authentication
 
@@ -78,8 +81,9 @@ Here are the gems included with this template:
 
 ---
 
-**Debug**  
+**Development / Debug**  
 
+- [tux](https://github.com/cldwalker/tux)
 - [better_errors](https://github.com/charliesome/better_errors)
 - [binding_of_caller](https://github.com/banister/binding_of_caller)
 - [pry-debugger](https://github.com/nixme/pry-debugger)
@@ -91,12 +95,6 @@ Here are the gems included with this template:
 - [capybara](www.test.com)
 - [factory_girl](www.test.com)
 - [rspec](www.test.com)
-
----
-
-**Development**  
-
-- [tux](https://github.com/cldwalker/tux)
 
 ---
 
