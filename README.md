@@ -22,7 +22,7 @@ This template *does not* come with any UI in place. That's for you to decide!
 This project is made with <3 and uses a collection of tips and tricks.  
 Let me know if you have any suggestions via comments / pull request!
 
-### Information and Resources
+### { Getting Started with Swoonatra }
 
 Here are a few sections on how you can get started with this template.
 
@@ -53,16 +53,23 @@ This is located in: `db/development.sqlite3`
 The SQLite3 **test** database will be generated when you first run `rspec`.  
 This is located in: `db/test.sqlite3`
 
-In **production**, the database will connect with the Heroku **postgres** database defined by the `ENV[DATABASE_URL]` variable. It should be automatically connected upon deploy.
+In **production**, the database will connect with the Heroku **postgres** database defined by the `ENV[DATABASE_URL]` variable. It should be automatically connected upon deploy.  
+
+Please note that the `.gitignore` file is setup to ignore both local databases.
+
+### { Addtional Informtion }
 
 #### > Security and Authentication
 
-In order to use **API Keys**, **OAuth Keys**, or **sensitive information**:
+This template allows you to safeguard against checking in sensitive information into GitHub!
 
-- Rename `config/authentication.example.rb` to `config/authentication.rb`
-- Add your API and authentication tokens etc. to `config/authentication.rb`
+In order to use **API Keys**, **OAuth Keys**, or **sensitive information** in your application:
 
-This will allow you to access them everywhere via the **ENV** hash.
+- In the root directory, run: `cp config/authentication.example.rb config/authentication.rb`
+- Add your API and authentication tokens etc. to `config/authentication.rb` as shown in the file.
+
+This will allow you to access them everywhere via the `ENV` hash in your application.
+
 
 #### > Gemfile
 
@@ -102,7 +109,7 @@ Here are the gems included with this template:
 
 - [pg](https://github.com/ged/ruby-pg)
 
-### Code Status
+### { Code Status }
 
 [![Build Status](https://travis-ci.org/CarlosPlusPlus/swoonatra.png?branch=master)](https://travis-ci.org/CarlosPlusPlus/swoonatra)    
 [![Code Climate](https://codeclimate.com/github/CarlosPlusPlus/swoonatra.png)](https://codeclimate.com/github/CarlosPlusPlus/swoonatra)  
