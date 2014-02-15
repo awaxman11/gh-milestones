@@ -1,6 +1,6 @@
 ## Swoonatra - Sinatra Template for Web Apps
 
-#### A Sinatra template for spinning up Heroku-ready Sinatra web applications.
+#### A Sinatra template for spinning up Heroku-ready web apps.
  
 New to the **Sinatra DSL // Ruby Web Framework**?  
 Check out the website **[HERE](http://www.sinatrarb.com/)** and **[GitHub Repo](https://github.com/sinatra/sinatra)**.
@@ -30,9 +30,9 @@ Here are a few sections on how you can get started with this template.
 
 In order to use this template:
 
-1.  Clone the repository via: `git clone git@github.com:CarlosPlusPlus/swoonatra.git`.
-2.  `cd` into the repository and remove the .git folder: `rm -rf .git` folder.
-3.  Perform a `git init` in the folder and push up to a created repository on GitHub:
+1.  Clone the repository via: `git clone git@github.com:CarlosPlusPlus/swoonatra.git`
+2.  `cd` into the repository and remove the .git folder: `rm -rf .git`
+3.  Initialize folder as a Git repository and push up to a created repository on GitHub:
 	- `git init`
 	- `git commit -m "First commit."`
 	- `git remote add origin git@github.com:[**Username**]/[**Repository Name**].git`
@@ -67,7 +67,7 @@ Once you are ready to launch your application, perform the following steps:
 - `heroku create` to create an application on Heroku.
 - `heroku addons:add heroku-postgresql:dev` to initialize a Heroku postgreSQL database.
 - `heroku config` to see the `[HEROKU_POSTGRESQL_COLOR_URL]`, needed for the next step.
-- `heroku pg:promote [HEROKU_POSTGRESQL_COLOR_URL]` to set database to `ENV[DATABASE_URL]`.
+- `heroku pg:promote [HEROKU_POSTGRESQL_COLOR_URL]` to set primary database.
 - `heroku labs:enable user-env-compile` to prvoide ENV variables during precompilation.
 - `git push heroku master` to push your application up to Heroku.
 - `heroku open` to open the application and view it on Heroku.
@@ -89,8 +89,8 @@ Here is some additional and important information you should know when using **S
 This template allows you to safeguard against checking in sensitive information into GitHub!   
 In order to use **API Keys**, **OAuth Keys**, or **sensitive information** in your application:
 
-- In the root directory, run: `cp config/authentication.example.rb config/authentication.rb`
-- Add your API and authentication tokens etc. to `config/authentication.rb` as shown in the file.
+- In the root directory: `cp config/authentication.example.rb config/authentication.rb`
+- Add your information to `config/authentication.rb` as shown in the file.
 
 This will allow you to access them everywhere via the `ENV` hash in your application.
 
@@ -135,6 +135,11 @@ Here are the gems included with this template:
 
 ### { Code Status }
 
-[![Build Status](https://travis-ci.org/CarlosPlusPlus/swoonatra.png?branch=master)](https://travis-ci.org/CarlosPlusPlus/swoonatra)    
-[![Code Climate](https://codeclimate.com/github/CarlosPlusPlus/swoonatra.png)](https://codeclimate.com/github/CarlosPlusPlus/swoonatra)  
+**Travis CI** Build Status  
+[![Build Status](https://travis-ci.org/CarlosPlusPlus/swoonatra.png?branch=master)](https://travis-ci.org/CarlosPlusPlus/swoonatra)  
+
+**Code Climate** Code Quality  
+[![Code Climate](https://codeclimate.com/github/CarlosPlusPlus/swoonatra.png)](https://codeclimate.com/github/CarlosPlusPlus/swoonatra)
+
+**Gemnamsium** Dependency Analysis  
 [![Dependency Status](https://gemnasium.com/CarlosPlusPlus/swoonatra.png)](https://gemnasium.com/CarlosPlusPlus/swoonatra)
