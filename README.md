@@ -8,14 +8,14 @@ Check out the website **[HERE](http://www.sinatrarb.com/)** and **[GitHub Repo](
 At a high level, this template comes with the following features:  
 
 - A **modular** Sinatra app using **Ruby 2.1.0** built in to get you started fast. 
-- Local development using **SQLite3** and production using **PostgreSQL** on Heroku.
+- Local development using **SQLite3**, and production using **PostgreSQL** on Heroku.
 - Support for **ActiveRecord** model inheritance and database migrations.
-- **Authentication Support** for **API**, **OAuth Keys**, or any sensitive information.
 - Debugging tools like **Better Errors**, **Pry Debugger**, and **Sinatra Reloader**.
 - **RSpec Integration** for testing your application, models, and concerns.
+- **Authentication Support** for **API**, **OAuth Keys**, or any sensitive information.
 
-I've written in *comments* to explain all parts of the code base for you.  
-This template *does not* come with any UI in place. That's for you to decide!
+Inline *comments* explain the code base. Feel free to delete as necessary.  
+This template *does not* come with any UI in place. Styling is up to you.
 
 ---
 
