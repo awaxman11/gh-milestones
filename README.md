@@ -60,17 +60,14 @@ Please note that the `.gitignore` file is setup to ignore both local databases.
 ### { Deployment to Heroku }
 
 If you have never worked with Heroku, I recommend you read about it **[HERE](https://devcenter.heroku.com/articles/getting-started-with-ruby)**.  
-
-In order to launch your application to Heroku, you must:  
-
-1. Create an account on **[Heroku](https://id.heroku.com/signup)**. 
-2. Install the **[Heroku Toolbelt](https://toolbelt.herokuapp.com/)** for Command Line integration.
-3. Login to Heroku via command line: `heroku login`
+In order to launch your application to Heroku, follow this **[Quick Start Guide](https://devcenter.heroku.com/articles/quickstart)**.
 
 Once you are ready to launch your application, perform the following steps:
 
 - `heroku create` to create an application on Heroku.
 - `heroku addons:add heroku-postgresql:dev` to initialize a Heroku postgreSQL database.
+- `heroku config` to see the `[HEROKU_POSTGRESQL_COLOR_URL]`, needed for the next step.
+- `heroku pg:promote [HEROKU_POSTGRESQL_COLOR_URL]` to set database to `ENV[DATABASE_URL]`.
 - `heroku labs:enable user-env-compile` to prvoide ENV variables during precompilation.
 - `git push heroku master` to push your application up to Heroku.
 - `heroku open` to open the application and view it on Heroku.
@@ -80,7 +77,7 @@ Once you are ready to launch your application, perform the following steps:
 - `heroku run rake db:migrate` will do this for you.
 
 My personal recommendation would be to begin testing on Heroku ASAP!  
-This ensures that your setup is correct and working as expected.
+This ensures both local & production setups are working as expected.
 
 
 ### { Addtional Informtion }
