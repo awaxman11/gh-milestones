@@ -44,14 +44,14 @@ module AppName
     # => define helper methods.
 
     helpers do
+      include Rack::Utils
+      
+      # ==> Capability to escape HTML.
+      alias_method :h, :escape_html
+      
       # ==> Enable partials in all templates.
       def partial(file_name)
         erb file_name, :layout => false
-      end
-
-      def h(text)
-        # ==> Capability to escape HTML.
-        Rack::Utils.escape_html(text)
       end
     end
   end
