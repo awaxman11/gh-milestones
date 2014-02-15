@@ -1,17 +1,17 @@
-require 'bundler'
-
-if ENV['RACK_ENV']
-  Bundler.require(:default, ENV['RACK_ENV'])
-else
-  Bundler.require(:default)
-end
-
 # Include:
 # => Authentication File
 # => Concerns | Helpers | Models
 # => Database Configuration
 # => Debug Tools
+# => Sinatra Libraries
+
+require 'sinatra'
+require 'sinatra/activerecord'
+
 require_relative 'environment'
+
+require 'sinatra/flash'
+require 'sinatra/redirect_with_flash'
 
 # Rename 'AppName' to name of choice.
 # => Update 'AppName' : config.ru // spec_helper.rb
@@ -48,7 +48,7 @@ module AppName
       
       # ==> Capability to escape HTML.
       alias_method :h, :escape_html
-      
+
       # ==> Enable partials in all templates.
       def partial(file_name)
         erb file_name, :layout => false
