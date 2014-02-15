@@ -32,14 +32,18 @@ In order to use this template:
 
 1.  Clone the repository via: `git clone git@github.com:CarlosPlusPlus/swoonatra.git`.
 2.  `cd` into the repository and remove the .git folder: `rm -rf .git` folder.
-3.  Perform a `git init` folder, or set as a remote to a respository already on GitHub.
+3.  Perform a `git init` in the folder and push up to a created repository on GitHub:
+	- `git init`
+	- `git commit -m "First commit."`
+	- `git remote add origin git@github.com:[**Username**]/[**Repository Name**].git`
+	- `git push -u origin master`
 4.  Ensure you have **PostgreSQL** installed on your machine.
 	- If not installed and on a MAC, use Homebrew via Terminal: `brew install postgresql`
 5. Run a `bundle install` to install all gem dependencies.
 6. Run `rackup` to start your local server.
 7. Visit `localhost:9292` in your favorite browswer.
 
-All set and good to go!
+All set and good to go for local development!
 
 #### > Database Setup
 
