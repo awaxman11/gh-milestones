@@ -26,7 +26,7 @@ Let me know if you have any suggestions via comments / pull request!
 
 Here are a few sections on how you can get started with this template.
 
-#### > Up and Running
+#### >>> GET UP AND RUNNING
 
 In order to use this template:
 
@@ -45,7 +45,7 @@ In order to use this template:
 
 All set and good to go for local development!
 
-#### > Database Setup
+#### >>> DATABASE SETUP
 
 The SQLite3 **development** database will be generated when you first run `rackup`.  
 This is located in: `db/development.sqlite3`
@@ -53,16 +53,43 @@ This is located in: `db/development.sqlite3`
 The SQLite3 **test** database will be generated when you first run `rspec`.  
 This is located in: `db/test.sqlite3`
 
-In **production**, the database will connect with the Heroku **postgres** database defined by the `ENV[DATABASE_URL]` variable. It should be automatically connected upon deploy.  
+In **production**, the database will connect with the Heroku **postgres** database defined by the `ENV[DATABASE_URL]` variable. It should be automatically connected upon deploy.
 
 Please note that the `.gitignore` file is setup to ignore both local databases.
 
+### { Deployment to Heroku }
+
+If you have never worked with Heroku, I recommend you read about it **[HERE](https://devcenter.heroku.com/articles/getting-started-with-ruby)**.  
+
+In order to launch your application to Heroku, you must:  
+
+1. Create an account on **[Heroku](https://id.heroku.com/signup)**. 
+2. Install the **[Heroku Toolbelt](https://toolbelt.herokuapp.com/)** for Command Line integration.
+3. Login to Heroku via command line: `heroku login`
+
+Once you are ready to launch your application, perform the following steps:
+
+- `heroku create` to create an application on Heroku.
+- `heroku addons:add heroku-postgresql:dev` to initialize a Heroku postgreSQL database.
+- `heroku labs:enable user-env-compile` to prvoide ENV variables during precompilation.
+- `git push heroku master` to push your application up to Heroku.
+- `heroku open` to open the application and view it on Heroku.
+
+**NOTE** - if your application uses ActiveRecord models, you need to run database migrations on Heroku:  
+
+- `heroku run rake db:migrate` will do this for you.
+
+My personal recommendation would be to begin testing on Heroku ASAP!  
+This ensures that your setup is correct and working as expected.
+
+
 ### { Addtional Informtion }
 
-#### > Security and Authentication
+Here is some additional and important information you should know when using **Swoonatra**.
 
-This template allows you to safeguard against checking in sensitive information into GitHub!
+#### >>> SECURITY & AUTHENTICATION
 
+This template allows you to safeguard against checking in sensitive information into GitHub!   
 In order to use **API Keys**, **OAuth Keys**, or **sensitive information** in your application:
 
 - In the root directory, run: `cp config/authentication.example.rb config/authentication.rb`
@@ -71,7 +98,7 @@ In order to use **API Keys**, **OAuth Keys**, or **sensitive information** in yo
 This will allow you to access them everywhere via the `ENV` hash in your application.
 
 
-#### > Gemfile
+#### >>> GEMFILE
 
 Here are the gems included with this template:
 
