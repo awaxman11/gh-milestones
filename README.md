@@ -47,13 +47,13 @@ All set and good to go for local development!
 
 #### >>> DATABASE SETUP
 
-The SQLite3 **development** database will be generated when you first run `rackup`.  
+The SQLite3 **development** database will be generated when running `rackup` for the 1st time.  
 This is located in: `db/development.sqlite3`
 
-The SQLite3 **test** database will be generated when you first run `rspec`.  
+The SQLite3 **test** database will be generated when running `rspec` for the 1st time.  
 This is located in: `db/test.sqlite3`
 
-In **production**, the database will connect with the Heroku **postgres** database defined by the `ENV[DATABASE_URL]` variable. It should be automatically connected upon deploy.
+In **production**, the database will connect with the Heroku **postgreSQL** database automatically.
 
 Please note that the `.gitignore` file is setup to ignore both local databases.
 
@@ -72,7 +72,7 @@ Once you are ready to launch your application, perform the following steps:
 - `git push heroku master` to push your application up to Heroku.
 - `heroku open` to open the application and view it on Heroku.
 
-**NOTE** - if your application uses ActiveRecord models, you need to run database migrations on Heroku:  
+**NOTE** - if you're using ActiveRecord models, you need to run database migrations on Heroku:  
 
 - `heroku run rake db:migrate` will do this for you.
 
@@ -86,7 +86,8 @@ Here is some additional and important information you should know when using **S
 
 #### >>> SECURITY & AUTHENTICATION
 
-This template allows you to safeguard against checking in sensitive information into GitHub!   
+This template allows you to safeguard against checking in sensitive information into GitHub!  
+
 In order to use **API Keys**, **OAuth Keys**, or **sensitive information** in your application:
 
 - In the root directory: `cp config/authentication.example.rb config/authentication.rb`
