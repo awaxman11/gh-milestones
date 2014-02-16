@@ -1,5 +1,4 @@
 ## Swoonatra
-### A SINATRA TEMPLATE FOR SPINNING UP HEROKU READY WEB APPS
  
 New to the **Sinatra DSL // Ruby Web Framework**?  
 Check out the website **[HERE](http://www.sinatrarb.com/)** and **[GitHub Repo](https://github.com/sinatra/sinatra)**.
