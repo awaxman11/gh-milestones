@@ -2,11 +2,12 @@
 require './config/authentication' if File.exists?('./config/authentication.rb')
 
 # Include Debug Capabilities in Development
-configure :development do
+configure :development, :test do
   require 'sinatra/reloader'
 
   require 'better_errors'
   require 'binding_of_caller'
+  require 'pry-debugger'
 
   use BetterErrors::Middleware
   BetterErrors.application_root = File.expand_path('..', __FILE__)
