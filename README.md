@@ -43,7 +43,9 @@ In order to use this template:
 6. Run `rackup` to start your local server.
 7. Visit `localhost:9292` in your favorite browswer.
 
-All set and good to go for local development!
+All set and good to go for local development.
+
+Don't forget to update `README.md` with your project specific information!
 
 #### >>> DATABASE SETUP
 
