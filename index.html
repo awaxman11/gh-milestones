@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Swoonatra by CarlosPlusPlus</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Swoonatra</h1>
+        <h2>A Sinatra template for spinning up Heroku-ready Sinatra web applications.</h2>
+        <a href="https://github.com/CarlosPlusPlus/swoonatra" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>
+<a name="swoonatra---sinatra-template-for-web-apps" class="anchor" href="#swoonatra---sinatra-template-for-web-apps"><span class="octicon octicon-link"></span></a>Swoonatra - Sinatra Template for Web Apps</h2>
+
+<h4>
+<a name="a-sinatra-template-for-spinning-up-heroku-ready-web-apps" class="anchor" href="#a-sinatra-template-for-spinning-up-heroku-ready-web-apps"><span class="octicon octicon-link"></span></a>A Sinatra template for spinning up Heroku-ready web apps.</h4>
+
+<p>New to the <strong>Sinatra DSL // Ruby Web Framework</strong>?<br>
+Check out the website <strong><a href="http://www.sinatrarb.com/">HERE</a></strong> and <strong><a href="https://github.com/sinatra/sinatra">GitHub Repo</a></strong>.</p>
+
+<p>At a high level, this template comes with the following features:  </p>
+
+<ul>
+<li>A <strong>modular</strong> Sinatra app using <strong>Ruby 2.1.0</strong> built in to get you started fast. </li>
+<li>Local development using <strong>SQLite3</strong>, and production using <strong>PostgreSQL</strong> on Heroku.</li>
+<li>Support for <strong>ActiveRecord</strong> model inheritance and database migrations.</li>
+<li>Debugging tools like <strong>Better Errors</strong>, <strong>Pry Debugger</strong>, and <strong>Sinatra Reloader</strong>.</li>
+<li>
+<strong>RSpec Integration</strong> for testing your application, models, and concerns.</li>
+<li>
+<strong>Authentication Support</strong> for <strong>API</strong>, <strong>OAuth Keys</strong>, or any sensitive information.</li>
+</ul><p>Inline <em>comments</em> explain the code base. Feel free to delete as necessary.<br>
+This template <em>does not</em> come with any UI in place. Styling is up to you.</p>
+
+<hr><p>This project is made with &lt;3 and uses a collection of tips and tricks.<br>
+Let me know if you have any suggestions via comments via pull request!</p>
+
+<h3>
+<a name="-getting-started-with-swoonatra-" class="anchor" href="#-getting-started-with-swoonatra-"><span class="octicon octicon-link"></span></a>{ Getting Started with Swoonatra }</h3>
+
+<p>Here are a few sections on how you can get started with this template.</p>
+
+<h4>
+<a name="-get-up-and-running" class="anchor" href="#-get-up-and-running"><span class="octicon octicon-link"></span></a>&gt;&gt;&gt; GET UP AND RUNNING</h4>
+
+<p>In order to use this template:</p>
+
+<ol>
+<li> Clone the repository via: <code>git clone git@github.com:CarlosPlusPlus/swoonatra.git</code>
+</li>
+<li> <code>cd</code> into the repository and remove the .git folder: <code>rm -rf .git</code>
+</li>
+<li> Initialize folder as a Git repository and push up to a created repository on GitHub:
+
+<ul>
+<li><code>git init</code></li>
+<li><code>git commit -m "First commit."</code></li>
+<li><code>git remote add origin git@github.com:[**Username**]/[**Repository Name**].git</code></li>
+<li><code>git push -u origin master</code></li>
+</ul>
+</li>
+<li> Ensure you have <strong>PostgreSQL</strong> installed on your machine.
+
+<ul>
+<li>If not installed and on a MAC, use Homebrew via Terminal: <code>brew install postgresql</code>
+</li>
+</ul>
+</li>
+<li>Run a <code>bundle install</code> to install all gem dependencies.</li>
+<li>Run <code>rackup</code> to start your local server.</li>
+<li>Visit <code>localhost:9292</code> in your favorite browswer.</li>
+</ol><p>All set and good to go for local development.</p>
+
+<p>Don't forget to update <code>README.md</code> with your project specific information!</p>
+
+<h4>
+<a name="-database-setup" class="anchor" href="#-database-setup"><span class="octicon octicon-link"></span></a>&gt;&gt;&gt; DATABASE SETUP</h4>
+
+<p>The SQLite3 <strong>development</strong> database will be generated when running <code>rackup</code> for the 1st time.<br>
+This is located in: <code>db/development.sqlite3</code></p>
+
+<p>The SQLite3 <strong>test</strong> database will be generated when running <code>rspec</code> for the 1st time.<br>
+This is located in: <code>db/test.sqlite3</code></p>
+
+<p>In <strong>production</strong>, the database will connect with the Heroku <strong>postgreSQL</strong> database automatically.</p>
+
+<p>Please note that the <code>.gitignore</code> file is setup to ignore both local databases.</p>
+
+<h3>
+<a name="-deployment-to-heroku-" class="anchor" href="#-deployment-to-heroku-"><span class="octicon octicon-link"></span></a>{ Deployment to Heroku }</h3>
+
+<p>If you've never used Heroku before, follow this <strong><a href="https://devcenter.heroku.com/articles/quickstart">Quick Start Guide</a></strong> to get setup.<br>
+For more technical detail, I recommend you read about it <strong><a href="https://devcenter.heroku.com/articles/getting-started-with-ruby">HERE</a></strong>. </p>
+
+<p>Once you are ready to launch your application, perform the following steps:</p>
+
+<ul>
+<li>
+<code>heroku create</code> to create an application on Heroku.</li>
+<li>
+<code>heroku addons:add heroku-postgresql:dev</code> to initialize a Heroku postgreSQL database.</li>
+<li>
+<code>heroku config</code> to see the <code>[HEROKU_POSTGRESQL_COLOR_URL]</code>, needed for the next step.</li>
+<li>
+<code>heroku pg:promote [HEROKU_POSTGRESQL_COLOR_URL]</code> to set primary database.</li>
+<li>
+<code>heroku labs:enable user-env-compile</code> to prvoide ENV variables during precompilation.</li>
+<li>
+<code>git push heroku master</code> to push your application up to Heroku.</li>
+<li>
+<code>heroku open</code> to open the application and view it on Heroku.</li>
+</ul><p><strong>NOTE</strong> - if you're using ActiveRecord models, you need to run database migrations on Heroku:  </p>
+
+<ul>
+<li>
+<code>heroku run rake db:migrate</code> in your project's root directory.</li>
+</ul><p>My personal recommendation would be to begin testing on Heroku ASAP!<br>
+This ensures both local &amp; production setups are working as expected.</p>
+
+<h3>
+<a name="-addtional-informtion-" class="anchor" href="#-addtional-informtion-"><span class="octicon octicon-link"></span></a>{ Addtional Informtion }</h3>
+
+<p>Here is some additional and important information you should know when using <strong>Swoonatra</strong>.</p>
+
+<h4>
+<a name="-security--authentication" class="anchor" href="#-security--authentication"><span class="octicon octicon-link"></span></a>&gt;&gt;&gt; SECURITY &amp; AUTHENTICATION</h4>
+
+<p>This template allows you to safeguard against checking in sensitive information into GitHub!  </p>
+
+<p>In order to use <strong>API Keys</strong>, <strong>OAuth Keys</strong>, or <strong>sensitive information</strong> in your application:</p>
+
+<ul>
+<li>In the root directory: <code>cp config/authentication.example.rb config/authentication.rb</code>
+</li>
+<li>Add your information to <code>config/authentication.rb</code> as shown in the file.</li>
+</ul><p>This will allow you to access them everywhere via the <code>ENV</code> hash in your application.</p>
+
+<h4>
+<a name="-gemfile" class="anchor" href="#-gemfile"><span class="octicon octicon-link"></span></a>&gt;&gt;&gt; GEMFILE</h4>
+
+<p>Here are the gems included with this template:</p>
+
+<p><strong>Framework</strong>  </p>
+
+<ul>
+<li><a href="http://www.sinatrarb.com/">sinatra</a></li>
+<li><a href="https://github.com/sinatra/sinatra-contrib">sinatra-contrib</a></li>
+<li><a href="http://guides.rubyonrails.org/active_record_querying.html">activerecord</a></li>
+<li><a href="https://github.com/bmizerany/sinatra-activerecord">sinatra-activerecord</a></li>
+<li><a href="https://github.com/SFEley/sinatra-flash">sinatra-flash</a></li>
+<li><a href="https://github.com/vast/sinatra-redirect-with-flash">sinatra-redirect-with-flash</a></li>
+<li><a href="https://github.com/luislavena/sqlite3-ruby">sqlite3</a></li>
+<li><a href="http://rake.rubyforge.org/">rake</a></li>
+</ul><hr><p><strong>Development / Debug</strong>  </p>
+
+<ul>
+<li><a href="https://github.com/cldwalker/tux">tux</a></li>
+<li><a href="https://github.com/charliesome/better_errors">better_errors</a></li>
+<li><a href="https://github.com/banister/binding_of_caller">binding_of_caller</a></li>
+<li><a href="https://github.com/nixme/pry-debugger">pry-debugger</a></li>
+</ul><hr><p><strong>Test</strong></p>
+
+<ul>
+<li><a href="www.test.com">capybara</a></li>
+<li><a href="www.test.com">factory_girl</a></li>
+<li><a href="www.test.com">rspec</a></li>
+</ul><hr><p><strong>Production</strong>  </p>
+
+<ul>
+<li><a href="https://github.com/ged/ruby-pg">pg</a></li>
+</ul><h3>
+<a name="-code-status-" class="anchor" href="#-code-status-"><span class="octicon octicon-link"></span></a>{ Code Status }</h3>
+
+<p><strong>Travis CI</strong> Build Status<br><a href="https://travis-ci.org/CarlosPlusPlus/swoonatra"><img src="https://travis-ci.org/CarlosPlusPlus/swoonatra.png?branch=master" alt="Build Status"></a>  </p>
+
+<p><strong>Code Climate</strong> Code Quality<br><a href="https://codeclimate.com/github/CarlosPlusPlus/swoonatra"><img src="https://codeclimate.com/github/CarlosPlusPlus/swoonatra.png" alt="Code Climate"></a></p>
+
+<p><strong>Gemnamsium</strong> Dependency Analysis<br><a href="https://gemnasium.com/CarlosPlusPlus/swoonatra"><img src="https://gemnasium.com/CarlosPlusPlus/swoonatra.png" alt="Dependency Status"></a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/CarlosPlusPlus/swoonatra/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/CarlosPlusPlus/swoonatra/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/CarlosPlusPlus/swoonatra"></a> is maintained by <a href="https://github.com/CarlosPlusPlus">CarlosPlusPlus</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-47998325-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
