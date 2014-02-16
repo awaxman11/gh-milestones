@@ -20,7 +20,7 @@ This template *does not* come with any UI in place. Styling is up to you.
 ---
 
 This project is made with <3 and uses a collection of tips and tricks.  
-Let me know if you have any suggestions via comments / pull request!
+Let me know if you have any suggestions via comments via pull request!
 
 ### { Getting Started with Swoonatra }
 
@@ -58,9 +58,9 @@ In **production**, the database will connect with the Heroku **postgreSQL** data
 Please note that the `.gitignore` file is setup to ignore both local databases.
 
 ### { Deployment to Heroku }
-
-If you have never worked with Heroku, I recommend you read about it **[HERE](https://devcenter.heroku.com/articles/getting-started-with-ruby)**.  
-In order to launch your application to Heroku, follow this **[Quick Start Guide](https://devcenter.heroku.com/articles/quickstart)**.
+ 
+If you've never used Heroku before, follow this **[Quick Start Guide](https://devcenter.heroku.com/articles/quickstart)** to get setup.  
+For more technical detail, I recommend you read about it **[HERE](https://devcenter.heroku.com/articles/getting-started-with-ruby)**. 
 
 Once you are ready to launch your application, perform the following steps:
 
@@ -74,7 +74,7 @@ Once you are ready to launch your application, perform the following steps:
 
 **NOTE** - if you're using ActiveRecord models, you need to run database migrations on Heroku:  
 
-- `heroku run rake db:migrate` will do this for you.
+- `heroku run rake db:migrate` in your project's root directory.
 
 My personal recommendation would be to begin testing on Heroku ASAP!  
 This ensures both local & production setups are working as expected.
