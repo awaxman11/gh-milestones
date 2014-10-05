@@ -1,23 +1,23 @@
 ## Swoonatra
- 
-New to the **Sinatra DSL // Ruby Web Framework**?  
+
+New to the **Sinatra DSL // Ruby Web Framework**?
 Check out the website **[HERE](http://www.sinatrarb.com/)** and **[GitHub Repo](https://github.com/sinatra/sinatra)**.
 
-At a high level, this template comes with the following features:  
+At a high level, this template comes with the following features:
 
-- A **modular** Sinatra app using **Ruby 2.1.0** built in to get you started fast. 
+- A **modular** Sinatra app using **Ruby 2.1.0** built in to get you started fast.
 - Local development using **SQLite3**, and production using **PostgreSQL** on Heroku.
 - Support for **ActiveRecord** model inheritance and database migrations.
 - Debugging tools like **Better Errors**, **Pry Debugger**, and **Sinatra Reloader**.
 - **RSpec Integration** for testing your application, models, and concerns.
 - **Authentication Support** for **API**, **OAuth Keys**, or any sensitive information.
 
-Inline *comments* explain the code base. Feel free to delete as necessary.  
+In-line *comments* explain the code base. Feel free to delete as necessary.
 This template *does not* come with any UI in place. Styling is up to you.
 
 ---
 
-This project is made with <3 and uses a collection of tips and tricks.  
+This project is made with <3 and uses a collection of tips and tricks.
 Let me know if you have any suggestions via comments via pull request!
 
 ### { Getting Started with Swoonatra }
@@ -31,15 +31,16 @@ In order to use this template:
 1.  Clone the repository via: `git clone git@github.com:CarlosPlusPlus/swoonatra.git`
 2.  `cd` into the repository and remove the .git folder: `rm -rf .git`
 3.  Initialize folder as a Git repository and push up to a created repository on GitHub:
-	- `git init`
-	- `git commit -m "First commit."`
-	- `git remote add origin git@github.com:[**Username**]/[**Repository Name**].git`
-	- `git push -u origin master`
+  - `git init`
+  - `git add .`
+  - `git commit -m "First commit."`
+  - `git remote add origin git@github.com:[**Username**]/[**Repository Name**].git`
+  - `git push -u origin master`
 4.  Ensure you have **PostgreSQL** installed on your machine.
-	- If not installed and on a MAC, use Homebrew via Terminal: `brew install postgresql`
+  - If not installed and on a MAC, use Homebrew via Terminal: `brew install postgresql`
 5. Run a `bundle install` to install all gem dependencies.
 6. Run `rackup` to start your local server.
-7. Visit `localhost:9292` in your favorite browswer.
+7. Visit `localhost:9292` in your favorite browser.
 
 All set and good to go for local development.
 
@@ -47,10 +48,10 @@ Don't forget to update `README.md` with your project specific information!
 
 #### >>> DATABASE SETUP
 
-The SQLite3 **development** database will be generated when running `rackup` for the 1st time.  
+The SQLite3 **development** database will be generated when running `rackup` for the 1st time.
 This is located in: `db/development.sqlite3`
 
-The SQLite3 **test** database will be generated when running `rspec` for the 1st time.  
+The SQLite3 **test** database will be generated when running `rspec` for the 1st time.
 This is located in: `db/test.sqlite3`
 
 In **production**, the database will connect with the Heroku **postgreSQL** database automatically.
@@ -58,9 +59,9 @@ In **production**, the database will connect with the Heroku **postgreSQL** data
 Please note that the `.gitignore` file is setup to ignore both local databases.
 
 ### { Deployment to Heroku }
- 
-If you've never used Heroku before, follow this **[Quick Start Guide](https://devcenter.heroku.com/articles/quickstart)** to get setup.  
-For more technical detail, I recommend you read about it **[HERE](https://devcenter.heroku.com/articles/getting-started-with-ruby)**. 
+
+If you've never used Heroku before, follow this **[Quick Start Guide](https://devcenter.heroku.com/articles/quickstart)** to get setup.
+For more technical detail, I recommend you read about it **[HERE](https://devcenter.heroku.com/articles/getting-started-with-ruby)**.
 
 Once you are ready to launch your application, perform the following steps:
 
@@ -72,11 +73,13 @@ Once you are ready to launch your application, perform the following steps:
 - `git push heroku master` to push your application up to Heroku.
 - `heroku open` to open the application and view it on Heroku.
 
-**NOTE** - if you're using ActiveRecord models, you need to run database migrations on Heroku:  
+**NOTE** - don't forget to **[create an SSH key](https://devcenter.heroku.com/articles/keys)** for Heroku if you haven't already.
+
+**NOTE** - if you're using ActiveRecord models, you need to run database migrations on Heroku:
 
 - `heroku run rake db:migrate` in your project's root directory.
 
-My personal recommendation would be to begin testing on Heroku ASAP!  
+My personal recommendation would be to begin testing on Heroku ASAP!
 This ensures both local & production setups are working as expected.
 
 
@@ -86,7 +89,7 @@ Here is some additional and important information you should know when using **S
 
 #### >>> SECURITY & AUTHENTICATION
 
-This template allows you to safeguard against checking in sensitive information into GitHub!  
+This template allows you to safeguard against checking in sensitive information into GitHub!
 
 In order to use **API Keys**, **OAuth Keys**, or **sensitive information** in your application:
 
@@ -100,7 +103,7 @@ This will allow you to access them everywhere via the `ENV` hash in your applica
 
 Here are the gems included with this template:
 
-**Framework**  
+**Framework**
 
 - [sinatra](http://www.sinatrarb.com/)
 - [sinatra-contrib](https://github.com/sinatra/sinatra-contrib)
@@ -113,7 +116,7 @@ Here are the gems included with this template:
 
 ---
 
-**Development / Debug**  
+**Development / Debug**
 
 - [tux](https://github.com/cldwalker/tux)
 - [better_errors](https://github.com/charliesome/better_errors)
@@ -130,17 +133,17 @@ Here are the gems included with this template:
 
 ---
 
-**Production**  
+**Production**
 
 - [pg](https://github.com/ged/ruby-pg)
 
 ### { Code Status }
 
-**Travis CI** Build Status  
-[![Build Status](https://travis-ci.org/CarlosPlusPlus/swoonatra.png?branch=master)](https://travis-ci.org/CarlosPlusPlus/swoonatra)  
+**Travis CI** Build Status
+[![Build Status](https://travis-ci.org/CarlosPlusPlus/swoonatra.png?branch=master)](https://travis-ci.org/CarlosPlusPlus/swoonatra)
 
-**Code Climate** Code Quality  
+**Code Climate** Code Quality
 [![Code Climate](https://codeclimate.com/github/CarlosPlusPlus/swoonatra.png)](https://codeclimate.com/github/CarlosPlusPlus/swoonatra)
 
-**Gemnamsium** Dependency Analysis  
+**Gemnamsium** Dependency Analysis
 [![Dependency Status](https://gemnasium.com/CarlosPlusPlus/swoonatra.png)](https://gemnasium.com/CarlosPlusPlus/swoonatra)
