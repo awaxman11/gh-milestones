@@ -45,7 +45,7 @@ Check out the website <strong><a href="http://www.sinatrarb.com/">HERE</a></stro
 <strong>RSpec Integration</strong> for testing your application, models, and concerns.</li>
 <li>
 <strong>Authentication Support</strong> for <strong>API</strong>, <strong>OAuth Keys</strong>, or any sensitive information.</li>
-</ul><p>Inline <em>comments</em> explain the code base. Feel free to delete as necessary.<br>
+</ul><p>In-line <em>comments</em> explain the code base. Feel free to delete as necessary.<br>
 This template <em>does not</em> come with any UI in place. Styling is up to you.</p>
 
 <hr><p>This project is made with &lt;3 and uses a collection of tips and tricks.<br>
@@ -70,6 +70,7 @@ Let me know if you have any suggestions via comments via pull request!</p>
 
 <ul>
 <li><code>git init</code></li>
+<li><code>git add .</code></li>
 <li><code>git commit -m "First commit."</code></li>
 <li><code>git remote add origin git@github.com:[**Username**]/[**Repository Name**].git</code></li>
 <li><code>git push -u origin master</code></li>
@@ -84,7 +85,7 @@ Let me know if you have any suggestions via comments via pull request!</p>
 </li>
 <li>Run a <code>bundle install</code> to install all gem dependencies.</li>
 <li>Run <code>rackup</code> to start your local server.</li>
-<li>Visit <code>localhost:9292</code> in your favorite browswer.</li>
+<li>Visit <code>localhost:9292</code> in your favorite browser.</li>
 </ol><p>All set and good to go for local development.</p>
 
 <p>Don't forget to update <code>README.md</code> with your project specific information!</p>
@@ -125,8 +126,9 @@ For more technical detail, I recommend you read about it <strong><a href="https:
 <code>git push heroku master</code> to push your application up to Heroku.</li>
 <li>
 <code>heroku open</code> to open the application and view it on Heroku.</li>
-</ul><p><strong>NOTE</strong> - if you're using ActiveRecord models, you need to run database migrations on Heroku:  </p>
-
+</ul>
+<p><strong>NOTE</strong> - don't forget to <strong><a href="https://devcenter.heroku.com/articles/keys" target="_blank">create an SSH key</a> for Heroku if you haven't already.</p>
+<p><strong>NOTE</strong> - if you're using ActiveRecord models, you need to run database migrations on Heroku:  </p>
 <ul>
 <li>
 <code>heroku run rake db:migrate</code> in your project's root directory.</li>
