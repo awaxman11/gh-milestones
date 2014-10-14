@@ -1,7 +1,7 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore .DS_Store
+# Ignore .DS_Store.
 .DS_STORE
 *ds_store
 
@@ -11,5 +11,8 @@
 # Ignore database.yml file.
 /config/database.yml
 
-# Ignore configuration file
+# Ignore configuration file.
 /config/authentication.rb
+
+# Ignore files from gh-pages branch.
+_site/

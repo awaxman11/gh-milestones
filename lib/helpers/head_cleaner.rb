@@ -40,8 +40,8 @@ module Sinatra
       js << settings.javascripts if settings.respond_to?('javascripts')
       js << args
       js << @js if @js
-      js.flatten.uniq.map do |script| 
-        "<script src=\"#{path_to script}\"></script>"
+      js.flatten.uniq.map do |script|
+        "<script src=\"#{path_to script}\"></script>/n    "
       end.join
     end
 
@@ -55,9 +55,9 @@ module Sinatra
         css << settings.css if settings.respond_to?('css')
         css << args
         css << @css if @css
-        css.flatten.uniq.map do |stylesheet| 
+        css.flatten.uniq.map do |stylesheet|
           "<link href=\"/css/#{stylesheet}.css\" media=\"screen, projection\" rel=\"stylesheet\" />"
-        end.join    
+        end.join
     end
 
     def css(*args)
@@ -69,6 +69,6 @@ module Sinatra
       "<link href=\"http://fonts.googleapis.com/css?family=#{((@fonts?settings.fonts+@fonts:settings.fonts)+args).uniq.*'|'}\" rel=\"stylesheet\" />"
     end
   end
-  
+
   helpers ClearHead
 end
