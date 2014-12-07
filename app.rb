@@ -45,7 +45,7 @@ module AppName
 
     helpers do
       include Rack::Utils
-      
+
       # ==> Capability to escape HTML.
       alias_method :h, :escape_html
 
