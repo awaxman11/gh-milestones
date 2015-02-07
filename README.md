@@ -48,11 +48,9 @@ Don't forget to update `README.md` with your project specific information!
 
 #### >>> DATABASE SETUP
 
-The `config/database.yml.sample` file contains an example configuration for your local development and test databases. Please run `cp config/database.yml.sample config/database.yml` to get setup locally, and make sure to change the database names as you see fit.`
+The `config/database.yml.sample` file contains an example configuration for your local development and test databases. Please run `cp config/database.yml.sample config/database.yml` to get setup locally, and make sure to change the database names as you see fit.
 
 In **production**, the database will automatically connect with the Heroku **postgreSQL** database.
-
-Please note that the `.gitignore` file is setup to ignore both local databases.
 
 ### { Deployment to Heroku }
 
