@@ -41,7 +41,7 @@ module Sinatra
       js << args
       js << @js if @js
       js.flatten.uniq.map do |script|
-        "<script src=\"#{path_to script}\"></script>/n    "
+        "<script src=\"#{path_to script}\"></script>\n"
       end.join
     end
 
