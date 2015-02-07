@@ -99,23 +99,23 @@ Here are the gems included with this template:
 
 **Framework**
 
+- [activerecord](http://guides.rubyonrails.org/active_record_querying.html)
+- [pg](https://github.com/ged/ruby-pg)
+- [rake](http://rake.rubyforge.org/)
 - [sinatra](http://www.sinatrarb.com/)
 - [sinatra-contrib](https://github.com/sinatra/sinatra-contrib)
-- [activerecord](http://guides.rubyonrails.org/active_record_querying.html)
 - [sinatra-activerecord](https://github.com/bmizerany/sinatra-activerecord)
 - [sinatra-flash](https://github.com/SFEley/sinatra-flash)
 - [sinatra-redirect-with-flash](https://github.com/vast/sinatra-redirect-with-flash)
-- [sqlite3](https://github.com/luislavena/sqlite3-ruby)
-- [rake](http://rake.rubyforge.org/)
 
 ---
 
 **Development / Debug**
 
-- [tux](https://github.com/cldwalker/tux)
 - [better_errors](https://github.com/charliesome/better_errors)
 - [binding_of_caller](https://github.com/banister/binding_of_caller)
 - [pry-debugger](https://github.com/nixme/pry-debugger)
+- [tux](https://github.com/cldwalker/tux)
 
 ---
 
@@ -127,17 +127,14 @@ Here are the gems included with this template:
 
 ---
 
-**Production**
-
-- [pg](https://github.com/ged/ruby-pg)
-
 ### { Code Status }
 
-**Travis CI** Build Status
-[![Build Status](https://travis-ci.org/CarlosPlusPlus/swoonatra.png?branch=master)](https://travis-ci.org/CarlosPlusPlus/swoonatra)
 
 **Code Climate** Code Quality
 [![Code Climate](https://codeclimate.com/github/CarlosPlusPlus/swoonatra.png)](https://codeclimate.com/github/CarlosPlusPlus/swoonatra)
 
 **Gemnamsium** Dependency Analysis
 [![Dependency Status](https://gemnasium.com/CarlosPlusPlus/swoonatra.png)](https://gemnasium.com/CarlosPlusPlus/swoonatra)
+
+**Travis CI** Build Status
+[![Build Status](https://travis-ci.org/CarlosPlusPlus/swoonatra.png?branch=master)](https://travis-ci.org/CarlosPlusPlus/swoonatra)
