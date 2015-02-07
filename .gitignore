@@ -5,14 +5,8 @@
 .DS_STORE
 *ds_store
 
-# Ignore local databases.
-/db/*.sqlite3
-
 # Ignore database.yml file.
 /config/database.yml
 
 # Ignore configuration file.
 /config/authentication.rb
-
-# Ignore files from gh-pages branch.
-_site/

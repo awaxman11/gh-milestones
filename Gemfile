@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
 
+gem 'pg'                          # PostgreSQL for DB adapter.
+
 gem 'sinatra'                     # Core Sinatra library.
 gem 'sinatra-contrib'             # Allow for Reloader.
 
@@ -12,7 +14,6 @@ gem 'sinatra-redirect-with-flash'
 gem 'rake'
 
 group :development, :test do
-  gem 'sqlite3'                   # SQLite3 in development.
   gem 'tux'                       # CLI for models / methods.
 
   gem 'better_errors'             # Better error output.
@@ -24,6 +25,3 @@ group :development, :test do
   gem 'rspec'                     # Ruby testing framework.
 end
 
-group :production do
-  gem 'pg'                        # PostgreSQL in production.
-end
