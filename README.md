@@ -31,13 +31,13 @@ In order to use this template:
 1.  Clone the repository via: `git clone git@github.com:CarlosPlusPlus/swoonatra.git`
 2.  `cd` into the repository and remove the .git folder: `rm -rf .git`
 3.  Initialize folder as a Git repository and push up to a created repository on GitHub:
-  - `git init`
-  - `git add .`
-  - `git commit -m "First commit."`
-  - `git remote add origin git@github.com:[**Username**]/[**Repository Name**].git`
-  - `git push -u origin master`
+  	- `git init`
+	- `git add .`
+	- `git commit -m "First commit."`
+	- `git remote add origin git@github.com:[**Username**]/[**Repository Name**].git`
+	- `git push -u origin master`
 4.  Ensure you have **PostgreSQL** installed on your machine.
-  - If not installed and on a MAC, use Homebrew via Terminal: `brew install postgresql`
+	- If not installed and on a MAC, use Homebrew via Terminal: `brew install postgresql`
 5. Run a `bundle install` to install all gem dependencies.
 6. Run `rackup` to start your local server.
 7. Visit `localhost:9292` in your favorite browser.
@@ -55,7 +55,7 @@ In **production**, the database will automatically connect with the Heroku **pos
 ### { Deployment to Heroku }
 
 If you've never used Heroku before, follow this **[Quick Start Guide](https://devcenter.heroku.com/articles/quickstart)** to get setup.
-For more technical detail, I recommend you read about it **[HERE](https://devcenter.heroku.com/articles/getting-started-with-ruby)**.
+For more technical detail, take a look **[HERE](https://devcenter.heroku.com/articles/getting-started-with-ruby)**.
 
 Once you are ready to launch your application, perform the following steps:
 
@@ -72,9 +72,6 @@ Once you are ready to launch your application, perform the following steps:
 **NOTE** - if you're using ActiveRecord models, you need to run database migrations on Heroku:
 
 - `heroku run rake db:migrate` in your project's root directory.
-
-My personal recommendation would be to begin testing on Heroku ASAP!
-This ensures both local & production setups are working as expected.
 
 
 ### { Addtional Informtion }
@@ -103,8 +100,8 @@ Here are the gems included with this template:
 - [pg](https://github.com/ged/ruby-pg)
 - [rake](http://rake.rubyforge.org/)
 - [sinatra](http://www.sinatrarb.com/)
-- [sinatra-contrib](https://github.com/sinatra/sinatra-contrib)
 - [sinatra-activerecord](https://github.com/bmizerany/sinatra-activerecord)
+- [sinatra-contrib](https://github.com/sinatra/sinatra-contrib)
 - [sinatra-flash](https://github.com/SFEley/sinatra-flash)
 - [sinatra-redirect-with-flash](https://github.com/vast/sinatra-redirect-with-flash)
 
@@ -125,16 +122,14 @@ Here are the gems included with this template:
 - [factory_girl](www.test.com)
 - [rspec](www.test.com)
 
----
 
 ### { Code Status }
 
-
-**Code Climate** Code Quality
+**Code Climate**  
 [![Code Climate](https://codeclimate.com/github/CarlosPlusPlus/swoonatra.png)](https://codeclimate.com/github/CarlosPlusPlus/swoonatra)
 
-**Gemnamsium** Dependency Analysis
+**Gemnamsium**  
 [![Dependency Status](https://gemnasium.com/CarlosPlusPlus/swoonatra.png)](https://gemnasium.com/CarlosPlusPlus/swoonatra)
 
-**Travis CI** Build Status
+**Travis CI**  
 [![Build Status](https://travis-ci.org/CarlosPlusPlus/swoonatra.png?branch=master)](https://travis-ci.org/CarlosPlusPlus/swoonatra)
