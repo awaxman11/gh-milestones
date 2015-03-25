@@ -128,8 +128,5 @@ Here are the gems included with this template:
 **Code Climate**  
 [![Code Climate](https://codeclimate.com/github/CarlosPlusPlus/swoonatra.png)](https://codeclimate.com/github/CarlosPlusPlus/swoonatra)
 
-**Gemnamsium**  
-[![Dependency Status](https://gemnasium.com/CarlosPlusPlus/swoonatra.png)](https://gemnasium.com/CarlosPlusPlus/swoonatra)
-
 **Travis CI**  
 [![Build Status](https://travis-ci.org/CarlosPlusPlus/swoonatra.png?branch=master)](https://travis-ci.org/CarlosPlusPlus/swoonatra)
