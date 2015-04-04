@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '2.0.0'
 
 gem 'pg'                          # PostgreSQL for DB adapter.
 
@@ -18,7 +18,7 @@ group :development, :test do
 
   gem 'better_errors'             # Better error output.
   gem 'binding_of_caller'         # CLI error output.
-  gem 'pry-debugger'              # Ruby debugger.
+  gem 'byebug'                    # Ruby debugger.
 
   gem 'capybara'                  # Integration testing.
   gem 'factory_girl'              # Test tool for factories.
