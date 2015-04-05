@@ -49,7 +49,7 @@ module AppName
     # ==> Render index page.
 
     get '/' do
-      erb :index, :locals => { main_nav: false }
+      erb :index, :locals => { main_nav: false, back_button: false }
     end
 
     get '/login' do
@@ -62,7 +62,7 @@ module AppName
         client.auto_paginate = true
         @milestones = client.list_milestones("seatgeek/tixcast")
         @milestones.sort! { |a,b| a[:title].downcase <=> b[:title].downcase }
-        erb :milestones, :locals => { milestones: @milestones, main_nav: true}
+        erb :milestones, :locals => { milestones: @milestones, main_nav: true, back_button: false}
       else
         redirect '/'
       end
@@ -76,7 +76,8 @@ module AppName
         @issues = m.issues
         @milestone = m.milestone
         @stats = m.stats
-        erb :show, :locals => { issues: @issues, stats: @stats, milestone: @milestone, main_nav: true }
+        @is_no_priority = m.is_no_priority?
+        erb :show, :locals => { issues: @issues, stats: @stats, milestone: @milestone, main_nav: true, back_button: true, is_no_priority: @is_no_priority  }
       else
         redirect '/'
       end

@@ -20,13 +20,15 @@
         </thead>
         <tbody>
           <% stats.each do |key, array| %>
-            <tr>
+            <% unless (key == :no_priority && is_no_priority) %>
+            <tr class=<%= key == :no_priority ? 'error' : '' %><%= key == :total ? 'active' : '' %>>
               <td><%= key.to_s.humanize.capitalize %></td>
-              <td><%= stats[key][:count] %> issues</td>
+              <td><%= stats[key][:count] %> issues <%= key == :no_priority ? '<i class="warning sign icon"></i>' : '' %></td>
               <td><%= stats[key][:points] %> pts</td>
               <td><%= stats[key][:points] / 4 %> days</td>
-              <td><%= stats[key][:no_points] %> issues</td>
+              <td class=<%= stats[key][:no_points] > 0 ? 'error' : '' %>><%= stats[key][:no_points] %> issues <%= stats[key][:no_points] > 0 && key != :total ? '<i class="warning sign icon"></i>' : '' %></td>
             </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>

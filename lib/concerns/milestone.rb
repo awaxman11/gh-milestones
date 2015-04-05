@@ -22,6 +22,7 @@ class Milestone
       :normal => {},
       :low => {},
       :no_priority => {},
+      :total => {}
     }
 
     client.auto_paginate = true
@@ -44,6 +45,10 @@ class Milestone
 
   def stats
     @stats
+  end
+
+  def is_no_priority?
+    return @no_priority_count == 0
   end
 
   def get_stats
@@ -117,11 +122,14 @@ class Milestone
     @stats[:normal][:points] = @normal_points
     @stats[:low][:points] = @low_points
     @stats[:no_priority][:points] = @no_priority_points
+    @stats[:total][:points] = @high_points + @normal_points + @low_points + @no_priority_points
 
     @stats[:high][:no_points] = @high_no_points
     @stats[:normal][:no_points] = @normal_no_points
     @stats[:low][:no_points] = @low_no_points
     @stats[:no_priority][:no_points] = @no_priority_no_points
+    @stats[:total][:no_points] = @high_no_points + @normal_no_points + @low_no_points + @no_priority_no_points
+
   end
 
   def assign_count
@@ -129,6 +137,7 @@ class Milestone
     @stats[:normal][:count] = @hash_values.select { |l| l == "priority: normal" }.count
     @stats[:low][:count] = @hash_values.select { |l| l == "priority: low" }.count
     @stats[:no_priority][:count] = @no_priority_count
+    @stats[:total][:count] = issues.count
   end
   
 

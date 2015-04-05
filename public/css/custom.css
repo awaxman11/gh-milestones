@@ -6,3 +6,8 @@
   -webkit-animation: none;
   animation: none;
 }
+
+.ui.table tr.active td, .ui.celled.table tr.active:hover td {
+  background: #898989 !important;
+  color: white !important;
+}
