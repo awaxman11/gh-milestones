@@ -183,7 +183,7 @@ module Sinatra
             authenticate!
             # return_to = session.delete('return_to') || _relative_url_for('/')
             # redirect return_to
-            redirect "http://localhost:9393"
+            redirect ENV['GITHUB_CALLBACK_URL']
           end
         end
       end
