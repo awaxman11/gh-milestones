@@ -1,8 +1,21 @@
-<a href="/milestones">Back</a><br><br>
-<%= issues.count %>
+<div class="ui grid">
 
-<ul>
-<% stats.each do |stat| %>
-  <li><%= stat %></li>
-<% end %>
-</ul>
+  <div class="fourteen wide column centered">
+
+    <div class="tab header segment">
+
+      <h2 class="ui center aligned header">
+        <%= milestone[:title] %>
+      </h2>
+
+      <%= issues.count %>
+
+      <ul>
+      <% stats.each do |stat| %>
+        <li><%= stat %></li>
+      <% end %>
+      </ul>
+
+    </div>
+  </div>
+</div>

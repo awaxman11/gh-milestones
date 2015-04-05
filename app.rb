@@ -74,8 +74,9 @@ module AppName
         puts client
         m = Milestone.new("seatgeek/tixcast", params[:id], client)
         @issues = m.issues
+        @milestone = m.milestone
         @pretty_stats = m.get_stats
-        erb :show, :locals => { issues: @issues, stats: @pretty_stats, main_nav: true }
+        erb :show, :locals => { issues: @issues, stats: @pretty_stats, milestone: @milestone, main_nav: true }
       else
         redirect '/'
       end

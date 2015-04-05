@@ -10,6 +10,7 @@ class Milestone
     @low_points = 0 
 
     client.auto_paginate = true
+    @milestone = client.milestone(repo, milestone)
     @issues = client.list_issues(repo, milestone: milestone)
     self.extract_labels
     @hash_values.flatten!
@@ -18,6 +19,10 @@ class Milestone
 
   def issues
     @issues
+  end
+
+  def milestone
+    @milestone
   end
 
   def get_stats
