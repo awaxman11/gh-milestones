@@ -11,6 +11,8 @@ gem 'sinatra-activerecord'
 gem 'sinatra-flash'               # Sinatra flash capability.
 gem 'sinatra-redirect-with-flash'
 
+gem 'sinatra_auth_github'         # oauth w/ Github capability
+
 gem 'rake'
 
 group :development, :test do

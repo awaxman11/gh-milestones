@@ -12,12 +12,14 @@ require_relative 'environment'
 
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
+require './lib/sinatra/auth/github.rb'
 
 # Rename 'AppName' to name of choice.
 # => Update 'AppName' : config.ru // spec_helper.rb
 module AppName
   class App < Sinatra::Application
     register Sinatra::ActiveRecordExtension
+    enable :sessions
 
     # Configure Options
     # ==> Set default paths for static content.
@@ -26,7 +28,15 @@ module AppName
       set :public_folder, 'public'
     end
 
-    # ==> Set global JavaScript files for project.
+    set :github_options, {
+      :scopes    => "repo",
+      :secret    => ENV['GITHUB_CLIENT_SECRET'],
+      :client_id => ENV['GITHUB_CLIENT_ID'],
+    }
+
+    register Sinatra::Auth::Github
+
+    # ==> Set global JavaScript files for pfroject.
     set :javascripts, [:jquery]
 
     # Filters
@@ -36,8 +46,33 @@ module AppName
     # => define controller actions.
 
     # ==> Render index page.
+
     get '/' do
       erb :index
+    end
+
+    get '/login' do
+      redirect "https://github.com/login/oauth/authorize?client_id="+ENV['GITHUB_CLIENT_ID']+"&redirect_url=/&scope=repo"
+    end
+
+    get '/orgs/:id' do
+      github_organization_authenticate!(params['id'])
+      "Hello There, #{github_user.name}! You have access to the #{params['id']} organization."
+    end
+
+    get '/publicized_orgs/:id' do
+      github_publicized_organization_authenticate!(params['id'])
+      "Hello There, #{github_user.name}! You are publicly a member of the #{params['id']} organization."
+    end
+
+    get '/teams/:id' do
+      github_team_authenticate!(params['id'])
+      "Hello There, #{github_user.name}! You have access to the #{params['id']} team."
+    end
+
+    get '/logout' do
+      logout!
+      redirect '/'
     end
 
     # Helpers

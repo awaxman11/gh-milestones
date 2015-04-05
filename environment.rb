@@ -7,7 +7,7 @@ configure :development, :test do
 
   require 'better_errors'
   require 'binding_of_caller'
-  require 'pry-debugger'
+  require 'byebug'
 
   use BetterErrors::Middleware
   BetterErrors.application_root = File.expand_path('..', __FILE__)
