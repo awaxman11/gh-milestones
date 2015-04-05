@@ -8,13 +8,28 @@
         <%= milestone[:title] %>
       </h2>
 
-      <%= issues.count %>
-
-      <ul>
-      <% stats.each do |stat| %>
-        <li><%= stat %></li>
-      <% end %>
-      </ul>
+      <table class="ui celled table unstackable">
+        <thead>
+          <tr>
+            <th>Priority</th>
+            <th>Open Issues</th>
+            <th>Points</th>
+            <th>ETA</th>
+            <th>Un-sized</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% stats.each do |key, array| %>
+            <tr>
+              <td><%= key.to_s.humanize.capitalize %></td>
+              <td><%= stats[key][:count] %> issues</td>
+              <td><%= stats[key][:points] %> pts</td>
+              <td><%= stats[key][:points] / 4 %> days</td>
+              <td><%= stats[key][:no_points] %> issues</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
     </div>
   </div>

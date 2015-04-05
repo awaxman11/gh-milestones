@@ -8,13 +8,30 @@ class Milestone
     @high_points = 0
     @normal_points = 0
     @low_points = 0 
+    @no_priority_points = 0 
+    
+    @high_no_points = 0
+    @normal_no_points = 0
+    @low_no_points = 0 
+    @no_priority_no_points = 0  
+
+    @no_priority_count = 0
+
+    @stats = {
+      :high => {},
+      :normal => {},
+      :low => {},
+      :no_priority => {},
+    }
 
     client.auto_paginate = true
     @milestone = client.milestone(repo, milestone)
     @issues = client.list_issues(repo, milestone: milestone)
     self.extract_labels
     @hash_values.flatten!
-    self.create_stats
+    self.get_points
+    self.assign_points
+    self.assign_count
   end
 
   def issues
@@ -23,6 +40,10 @@ class Milestone
 
   def milestone
     @milestone
+  end
+
+  def stats
+    @stats
   end
 
   def get_stats
@@ -46,7 +67,7 @@ class Milestone
     end
   end
 
-  def create_stats
+  def get_points
 
     @array_of_issue_labels.each do |labels|
       
@@ -55,25 +76,60 @@ class Milestone
         size = labels.select { |l| l.split(":").first == "size"}
         if !size.empty?
           @high_points += size.first.split(":").last.to_f
+        else
+          @high_no_points += 1
         end
-      end
 
-      if labels.include?("priority: normal") 
+      elsif labels.include?("priority: normal") 
         size = labels.select { |l| l.split(":").first == "size"}
         if !size.empty?
           @normal_points += size.first.split(":").last.to_f
+        else
+          @normal_no_points += 1
         end
-      end
 
-      if labels.include?("priority: low") 
+      elsif labels.include?("priority: low") 
         size = labels.select { |l| l.split(":").first == "size"}
         if !size.empty?
           @low_points += size.first.split(":").last.to_f
+        else
+          @low_no_points += 1
+        end
+      
+      else 
+        @no_priority_count += 1
+        size = labels.select { |l| l.split(":").first == "size"}
+        if !size.empty?
+          @no_priority_points += size.first.split(":").last.to_f
+        else
+          @no_priority_no_points += 1
         end
       end
+
+
 
     end
     
   end
+
+  def assign_points
+    @stats[:high][:points] = @high_points
+    @stats[:normal][:points] = @normal_points
+    @stats[:low][:points] = @low_points
+    @stats[:no_priority][:points] = @no_priority_points
+
+    @stats[:high][:no_points] = @high_no_points
+    @stats[:normal][:no_points] = @normal_no_points
+    @stats[:low][:no_points] = @low_no_points
+    @stats[:no_priority][:no_points] = @no_priority_no_points
+  end
+
+  def assign_count
+    @stats[:high][:count] = @hash_values.select { |l| l == "priority: high" }.count
+    @stats[:normal][:count] = @hash_values.select { |l| l == "priority: normal" }.count
+    @stats[:low][:count] = @hash_values.select { |l| l == "priority: low" }.count
+    @stats[:no_priority][:count] = @no_priority_count
+  end
+  
 
 end
