@@ -9,17 +9,15 @@ class Milestone
     @normal_points = 0
     @low_points = 0 
 
-    puts "1"
     client.auto_paginate = true
-    puts "2"
     @issues = client.list_issues(repo, milestone: milestone)
-    puts "3"
     self.extract_labels
-    puts "4"
     @hash_values.flatten!
-    puts "5"
     self.create_stats
-    puts "6"
+  end
+
+  def issues
+    @issues
   end
 
   def get_stats

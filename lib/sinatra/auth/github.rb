@@ -176,7 +176,6 @@ module Sinatra
         app.helpers Helpers
 
         app.get '/auth/github/callback' do
-          puts "Hello world"
           if params["error"]
             redirect "/unauthenticated"
           else
