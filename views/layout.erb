@@ -11,6 +11,24 @@
   <!-- Body of Application -->
   <body>
     <!-- Yield to your ERB templates. -->
+    <% if main_nav %>
+      <div class="ui fixed inverted main menu">
+        <div class="container">
+          <a class="launch item" href="/">
+            <i class="home icon"></i>
+            Home
+          </a>
+
+          
+          
+          <div class="right menu">
+          </div>
+        </div>
+      </div>
+
+      <br><br>
+    <% end %>
+
     <%= yield %>
 
     <!-- Load Global and Custom JavaScript HERE -->
