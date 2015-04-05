@@ -157,7 +157,7 @@ module Sinatra
             :client_id     => app.github_options[:client_id]    || ENV['GITHUB_CLIENT_ID'],
             :client_secret => app.github_options[:secret]       || ENV['GITHUB_CLIENT_SECRET'],
             :scope         => app.github_options[:scopes]       || '',
-            :redirect_uri  => app.github_options[:callback_url] || 'http://localhost:9393/auth/github/callback'
+            :redirect_uri  => app.github_options[:callback_url] || ENV['GITHUB_CALLBACK_URL']
           }
 
           manager.serialize_from_session { |key| Warden::GitHub::Verifier.load(key) }
