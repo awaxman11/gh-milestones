@@ -70,8 +70,11 @@ module AppName
 
     get '/milestones/:id' do
       if authenticated?
+        puts "hello"
         client = github_user.api
+        puts client
         m = Milestone.new("seatgeek/tixcast", params[:id], client)
+        puts m.get_stats
         @issues = m.issues
         @pretty_stats = m.get_stats
         erb :show, :locals => { issues: @issues, stats: @pretty_stats }
