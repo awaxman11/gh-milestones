@@ -4,10 +4,8 @@
 <h1>Milestone Dashboard</h1>
 
 <% if warden.authenticated? %>
-  <a href="/milestones">Milestones</a>
+    <a href="/milestones" class="ui primary button">Milestones</a>
 <% end %>
-
-
 
 <br>
 <br>
@@ -15,4 +13,3 @@
 <% if !warden.authenticated? %>
    <a href="/login">Login</a><br>
 <% end %>
-

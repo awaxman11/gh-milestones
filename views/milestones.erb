@@ -1,10 +1,75 @@
-<a href="/">Home</a>
-<h1>Welcome to Swoonatra!</h1>
 
 
-<% milestones.each do |milestone| %>
-  <a href="/milestones/<%= milestone[:number] %>"><%= milestone[:title] %></a><br>
-<% end %>
+
+
+<div class="ui fixed inverted main menu">
+  <div class="container">
+    <a class="launch item" href="/">
+      <i class="home icon"></i>
+      Home
+    </a>
+
+    
+    
+    <div class="right menu">
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<div class="ui grid">
+
+  
+
+  <div class="fourteen wide column centered">
+
+    <div class="tab header segment">
+
+      <h2 class="ui center aligned header">
+        Milestones
+      </h2>
+
+      <table class="ui table unstackable milestone">
+        <thead>
+          <tr>
+            <th class="left aligned">Name</th>
+            <th class="left aligned">Open Issues</th>
+            <th>Progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% milestones.each do |milestone| %>
+            <tr>
+              <td>
+                <a href="/milestones/<%= milestone[:number] %>"><%= milestone[:title] %></a>
+              </td>
+              <td><%= milestone[:open_issues] %></td>
+              <td>
+                <div class="ui indicating progress" data-milestone=<%= milestone[:number] %> data-value=<%= milestone[:closed_issues] %> data-total=<%= milestone[:open_issues] + milestone[:closed_issues] %> id="example<%= milestone[:number] %>">
+                  <div class="bar">
+                    <div class="progress"></div>
+                  </div>
+                  <div class="label"><%= milestone[:closed_issues] %> / <%= milestone[:open_issues] + milestone[:closed_issues] %> completed</div>
+                </div>
+              </td>
+          <% end %>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
 
 
 
