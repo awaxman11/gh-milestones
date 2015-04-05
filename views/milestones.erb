@@ -1,0 +1,11 @@
+<a href="/">Home</a>
+<h1>Welcome to Swoonatra!</h1>
+
+
+<% milestones.each do |milestone| %>
+  <a href="/milestones/<%= milestone[:number] %>"><%= milestone[:title] %></a><br>
+<% end %>
+
+
+
+

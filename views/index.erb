@@ -1,19 +1,18 @@
-<h1>Welcome to Swoonatra!</h1>
-
-<p>This is where you would write your ERB / HTML.</p>
-
-
-
-
-<br>
-<br>
+<% if warden.authenticated? %>
+  <a href="/logout">Logout</a><br>
+<% end %>
+<h1>Milestone Dashboard</h1>
 
 <% if warden.authenticated? %>
-  Hello <%= warden.inspect %><br>
-  <a href="/logout">Logout</a><br>
-<% else %>
-  Hello World<br>
-  <a href="https://github.com/login/oauth/authorize?client_id=<%= ENV['GITHUB_CLIENT_ID'] %>&redirect_url=/&scope=repo">Login w/ Custom</a><br>
-   <a href="/login">/Login</a><br>
+  <a href="/milestones">Milestones</a>
+<% end %>
+
+
+
+<br>
+<br>
+
+<% if !warden.authenticated? %>
+   <a href="/login">Login</a><br>
 <% end %>
 

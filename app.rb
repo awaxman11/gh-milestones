@@ -13,6 +13,7 @@ require_relative 'environment'
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
 require './lib/sinatra/auth/github.rb'
+require './lib/concerns/milestone.rb'
 
 # Rename 'AppName' to name of choice.
 # => Update 'AppName' : config.ru // spec_helper.rb
@@ -55,19 +56,28 @@ module AppName
       redirect "https://github.com/login/oauth/authorize?client_id="+ENV['GITHUB_CLIENT_ID']+"&redirect_url=/&scope=repo"
     end
 
-    get '/orgs/:id' do
-      github_organization_authenticate!(params['id'])
-      "Hello There, #{github_user.name}! You have access to the #{params['id']} organization."
+    get '/milestones' do
+      if authenticated?
+        client = github_user.api
+        client.auto_paginate = true
+        @milestones = client.list_milestones("seatgeek/tixcast")
+        @milestones.sort! { |a,b| a[:title].downcase <=> b[:title].downcase }
+        erb :milestones, :locals => { :milestones => @milestones}
+      else
+        redirect '/'
+      end
     end
 
-    get '/publicized_orgs/:id' do
-      github_publicized_organization_authenticate!(params['id'])
-      "Hello There, #{github_user.name}! You are publicly a member of the #{params['id']} organization."
-    end
-
-    get '/teams/:id' do
-      github_team_authenticate!(params['id'])
-      "Hello There, #{github_user.name}! You have access to the #{params['id']} team."
+    get '/milestones/:id' do
+      if authenticated?
+        client = github_user.api
+        m = Milestone.new("seatgeek/tixcast", params[:id], client)
+        @issues = m.issues
+        @pretty_stats = m.get_stats
+        erb :show, :locals => { issues: @issues, stats: @pretty_stats }
+      else
+        redirect '/'
+      end
     end
 
     get '/logout' do
