@@ -26,7 +26,16 @@
               <td><%= stats[key][:count] %> issues <%= key == :no_priority ? '<i class="warning sign icon"></i>' : '' %></td>
               <td><%= stats[key][:points] %> pts</td>
               <td><%= stats[key][:points] / 4 %> days</td>
-              <td class=<%= stats[key][:no_points] > 0 ? 'error' : '' %>><%= stats[key][:no_points] %> issues <%= stats[key][:no_points] > 0 && key != :total ? '<i class="warning sign icon"></i>' : '' %></td>
+              <% if stats[key][:no_points] > 0 %>
+                <td class="error">
+                  <a href='<%= stats[key][:no_points_link] %>'>
+                    <%= stats[key][:no_points] %> issues
+                    <i class="warning sign icon"></i>
+                  </a>
+                </td>
+              <% else %>
+                <td class="positive">None <i class="icon checkmark positive"></i></td>
+              <% end %>
             </tr>
             <% end %>
           <% end %>

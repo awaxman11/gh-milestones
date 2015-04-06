@@ -7,7 +7,11 @@
   animation: none;
 }
 
-.ui.table tr.active td, .ui.celled.table tr.active:hover td {
+.ui.table td.error a {
+  color: #cd2929 !important;
+}
+
+.ui.table tr.active td, .ui.table tr.active td a, .ui.celled.table tr.active:hover td, .ui.celled.table tr.active:hover td a {
   background: #898989 !important;
   color: white !important;
 }

@@ -1,6 +1,10 @@
+require 'CGI'
+
 class Milestone
 
   def initialize(repo, milestone, client)
+    @repo = repo
+
     @hash_values = []
     @array_of_issue_labels = []
     @low_priority = []
@@ -33,6 +37,7 @@ class Milestone
     self.get_points
     self.assign_points
     self.assign_count
+    self.build_links
   end
 
   def issues
@@ -138,6 +143,19 @@ class Milestone
     @stats[:low][:count] = @hash_values.select { |l| l == "priority: low" }.count
     @stats[:no_priority][:count] = @no_priority_count
     @stats[:total][:count] = issues.count
+  end
+
+  def build_links
+    initial_link = "https://github.com/" + @repo + "/issues?q=is%3Aissue+is%3Aopen+"
+    no_points = '-label%3A"size%3A+0.5"+-label%3A"size%3A+1"+-label%3A"size%3A+2"+-label%3A"size%3A+3"+-label%3A"size%3A+4"+-label%3A"size%3A+5"+-label%3A"size%3A+6"+-label%3A"size%3A+7"+-label%3A"size%3A+8"+-label%3A"size%3A+10"'
+    milestone_name = '+milestone%3A"' + CGI::escape(milestone[:title].to_s)+'"'
+    label_name_pre = '+label%3A"'
+    label_name_post = '"'
+    @stats[:high][:no_points_link] = initial_link + no_points + milestone_name + label_name_pre + CGI::escape('priority: high') + label_name_post
+    @stats[:normal][:no_points_link] = initial_link + no_points + milestone_name + label_name_pre + CGI::escape('priority: normal') + label_name_post
+    @stats[:low][:no_points_link] = initial_link + no_points + milestone_name + label_name_pre + CGI::escape('priority: low') + label_name_post
+    @stats[:total][:no_points_link] = initial_link + no_points + milestone_name
+    
   end
   
 
