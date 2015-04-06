@@ -1,5 +1,3 @@
-require 'CGI'
-
 class Milestone
 
   def initialize(repo, milestone, client)
