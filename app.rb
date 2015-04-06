@@ -7,6 +7,7 @@
 
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'cgi'
 
 require_relative 'environment'
 
