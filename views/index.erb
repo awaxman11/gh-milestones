@@ -1,15 +1,33 @@
+<div class="homepage">
+
+
 <% if warden.authenticated? %>
-  <a href="/logout">Logout</a><br>
+  <a href="/logout" >Logout</a><br>
 <% end %>
-<h1>Milestone Dashboard</h1>
+
 
 <% if warden.authenticated? %>
     <a href="/milestones" class="ui primary button">Milestones</a>
 <% end %>
 
-<br>
-<br>
+<div class="homepage-container">
 
-<% if !warden.authenticated? %>
-   <a href="/login">Login</a><br>
-<% end %>
+  <div class="ui center aligned icon header">
+    <i class="github icon"></i>
+  </div>
+
+  <h1 class="ui center aligned header">Milestone Dashboard</h1>
+
+  <% if !warden.authenticated? %>
+
+    <div class="login-container ui center aligned icon header">
+      <a href="/login" class="login large ui primary button">
+        Login
+      </a>
+    </div>
+     
+  <% end %>
+
+</div>
+
+</div>

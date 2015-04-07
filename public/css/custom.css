@@ -15,3 +15,39 @@
   background: #898989 !important;
   color: white !important;
 }
+
+.homepage .login.ui.primary.button {
+  margin: 0 auto;
+}
+
+.homepage .login-container {
+  text-align: center;
+}
+
+.homepage .homepage-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.homepage-container h1.ui.header {
+  color: white;
+  margin-top: 0px; 
+  letter-spacing: 1px;
+}
+
+.homepage-container .ui.icon.header .github.icon {
+  color: white;
+  font-size: 70px;
+}
+
+.homepage {
+  height: 100%;
+  width: 100%;
+  background: #004b72;
+  background: -moz-radial-gradient(center bottom, ellipse cover, #004b72 0%, #002335 100%);
+  background: -webkit-gradient(radial, center bottom, 0px, center bottom, 100%, color-stop(0%,#004b72), color-stop(100%,#002335));
+  background: -webkit-radial-gradient(center bottom, ellipse cover, #004b72 0%,#002335 100%);
+  background: -ms-radial-gradient(center bottom, ellipse cover, #004b72 0%,#002335 100%);
+  background: radial-gradient(ellipse at center bottom, #004b72 0%,#002335 100%);
+}
