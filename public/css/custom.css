@@ -24,15 +24,22 @@
   text-align: center;
 }
 
+.logout-button {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  color: white;
+}
+
 .homepage .homepage-container {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.homepage-container h1.ui.header {
+.homepage-container h2.ui.header {
   color: white;
-  margin-top: 0px; 
+  margin-top: -10px; 
   letter-spacing: 1px;
 }
 

@@ -1,14 +1,9 @@
 <div class="homepage">
 
-
 <% if warden.authenticated? %>
-  <a href="/logout" >Logout</a><br>
+  <a class="logout-button <%= warden.authenticated? ? "logged-in" : "logged-out" %>" href="/logout">Logout</a>
 <% end %>
 
-
-<% if warden.authenticated? %>
-    <a href="/milestones" class="ui primary button">Milestones</a>
-<% end %>
 
 <div class="homepage-container">
 
@@ -16,17 +11,15 @@
     <i class="github icon"></i>
   </div>
 
-  <h1 class="ui center aligned header">Milestone Dashboard</h1>
-
-  <% if !warden.authenticated? %>
+  <h2 class="ui center aligned header"><%= warden.authenticated? ? "Welcome!" : "Milestone Dashboard" %></h2>
 
     <div class="login-container ui center aligned icon header">
-      <a href="/login" class="login large ui primary button">
-        Login
-      </a>
+      <% if warden.authenticated? %>
+          <a href="/milestones" class="ui large primary button">View  Milestones</a>
+      <% else %>
+        <a href="/login" class="large ui primary button">Login</a>
+      <% end %>
     </div>
-     
-  <% end %>
 
 </div>
 
