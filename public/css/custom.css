@@ -16,6 +16,8 @@
   color: white !important;
 }
 
+/*HOMEPAGE*/
+
 .homepage .login.ui.primary.button {
   margin: 0 auto;
 }
@@ -39,7 +41,7 @@
 
 .homepage-container h2.ui.header {
   color: white;
-  margin-top: -10px; 
+  margin-top: -5px; 
   letter-spacing: 1px;
 }
 
@@ -51,10 +53,21 @@
 .homepage {
   height: 100%;
   width: 100%;
+}
+
+.homepage, .overview {
+  height: 100%;
+  width: 100%;
   background: #004b72;
   background: -moz-radial-gradient(center bottom, ellipse cover, #004b72 0%, #002335 100%);
   background: -webkit-gradient(radial, center bottom, 0px, center bottom, 100%, color-stop(0%,#004b72), color-stop(100%,#002335));
   background: -webkit-radial-gradient(center bottom, ellipse cover, #004b72 0%,#002335 100%);
   background: -ms-radial-gradient(center bottom, ellipse cover, #004b72 0%,#002335 100%);
   background: radial-gradient(ellipse at center bottom, #004b72 0%,#002335 100%);
+}
+
+/*OVERVIEW*/
+
+.ui.menu .item > i.icon.home {
+  margin-left: 10px;
 }

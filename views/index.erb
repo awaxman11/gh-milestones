@@ -15,7 +15,8 @@
 
     <div class="login-container ui center aligned icon header">
       <% if warden.authenticated? %>
-          <a href="/milestones" class="ui large primary button">View  Milestones</a>
+          <a href="/overview" class="ui large primary button">Overview</a>
+          <a href="/milestones" class="ui large primary button">Milestones</a>
       <% else %>
         <a href="/login" class="large ui primary button">Login</a>
       <% end %>

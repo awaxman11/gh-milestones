@@ -57,6 +57,10 @@ module AppName
       redirect "https://github.com/login/oauth/authorize?client_id="+ENV['GITHUB_CLIENT_ID']+"&redirect_url=/&scope=repo"
     end
 
+    get '/overview' do
+      erb :overview, :locals => {main_nav: false, back_button: false}
+    end
+
     get '/milestones' do
       if authenticated?
         client = github_user.api
