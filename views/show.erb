@@ -20,23 +20,25 @@
         </thead>
         <tbody>
           <% stats.each do |key, array| %>
-            <% unless (key == :no_priority && is_no_priority) %>
-            <tr class=<%= key == :no_priority ? 'error' : '' %><%= key == :total ? 'active' : '' %>>
-              <td><%= key.to_s.humanize.capitalize %></td>
-              <td><%= stats[key][:count] %> issues <%= key == :no_priority ? '<i class="warning sign icon"></i>' : '' %></td>
-              <td><%= stats[key][:points] %> pts</td>
-              <td><%= stats[key][:points] / 4 %> days</td>
-              <% if stats[key][:no_points] > 0 %>
-                <td class="error">
-                  <a href='<%= stats[key][:no_points_link] %>'>
-                    <%= stats[key][:no_points] %> issues
-                    <i class="warning sign icon"></i>
-                  </a>
-                </td>
-              <% else %>
-                <td class="positive">None <i class="icon checkmark positive"></i></td>
+            <% if stats[key][:count] > 0 %>
+              <% unless (key == :no_priority && is_no_priority) %>
+                <tr class=<%= key == :no_priority ? 'error' : '' %><%= key == :total ? 'active' : '' %>>
+                  <td><%= key.to_s.humanize.capitalize %></td>
+                  <td><%= stats[key][:count] %> <%= stats[key][:count] == 1 ? 'issue' : 'issues' %> <%= key == :no_priority ? '<i class="warning sign icon"></i>' : '' %></td>
+                  <td><%= stats[key][:points] %> <%= stats[key][:points] == 1 ? 'pt' : 'pts' %></td>
+                  <td><%= stats[key][:points] / 4 %> <%= stats[key][:points]/4 == 1 ? 'day' : 'days' %></td>
+                  <% if stats[key][:no_points] > 0 %>
+                    <td class="error">
+                      <a href='<%= stats[key][:no_points_link] %>'>
+                        <%= stats[key][:no_points] %> <%= stats[key][:no_points] == 1 ? 'issue' : 'issues' %>
+                        <i class="warning sign icon"></i>
+                      </a>
+                    </td>
+                  <% else %>
+                    <td class="positive">None <i class="icon checkmark positive"></i></td>
+                  <% end %>
+                </tr>
               <% end %>
-            </tr>
             <% end %>
           <% end %>
         </tbody>
