@@ -12,54 +12,54 @@
   <div class="overview-stats-container">
 
     <div class="ui twelve column doubling centered grid">
-      <div class="three wide column ui huge statistic segment" data-link="/">
+      <div class="three wide column ui huge statistic segment" data-stat ="no_priority" data-link="">
         <div class="value">
-          22
+          42
         </div>
         <div class="label">
-          Breeds of Dog
+          need priority
+        </div>
+      </div>
+      <div class="three wide column ui huge statistic segment" data-stat ="issues_this_week">
+        <div class="value">
+          42
+        </div>
+        <div class="label">
+          created this week
         </div>
       </div>
       <div class="three wide column ui huge statistic segment">
         <div class="value">
-          22
+          42
         </div>
         <div class="label">
-          Breeds of Dog
-        </div>
-      </div>
-      <div class="three wide column ui huge statistic segment">
-        <div class="value">
-          22
-        </div>
-        <div class="label">
-          Breeds of Dog
+          TBD
         </div>
       </div>
     </div>
     <div class="ui twelve column doubling centered grid">
       <div class="three wide column ui huge statistic segment" data-link="/">
         <div class="value">
-          22
+          42
         </div>
         <div class="label">
-          Breeds of Dog
+          TBD
         </div>
       </div>
       <div class="three wide column ui huge statistic segment">
         <div class="value">
-          22
+          42
         </div>
         <div class="label">
-          Breeds of Dog
+          TBD
         </div>
       </div>
       <div class="three wide column ui huge statistic segment">
         <div class="value">
-          22
+          42
         </div>
         <div class="label">
-          Breeds of Dog
+          TBD
         </div>
       </div>
     </div>
@@ -77,14 +77,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript">
 
-// $('#overview').load('/', function(){
-//     $('div.active.dimmer').fadeOut(1000);
-// });
-
 $.ajax('overview_stats.json', {
   success: function(response) {
     console.log("Success!");
-    console.log(response);
+    response_keys = Object.keys(response)
+
+    _.each($('.statistic.segment'), function(value){
+      stat = $(value).data('stat')
+      
+      if (_.contains(response_keys, stat)){
+        $("div[data-stat='"+stat+"']").children('.value').html(response[stat].count)
+        $("div[data-stat='"+stat+"']").data('link', response[stat].link)
+        console.log(stat)
+      }
+    });
     $('div.active.dimmer').fadeOut(400);
     $('.overview').fadeIn(1000);
   },

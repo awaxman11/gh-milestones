@@ -19,6 +19,7 @@ require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
 require './lib/sinatra/auth/github.rb'
 require './lib/concerns/milestone.rb'
+require './lib/concerns/overview.rb'
 
 # Rename 'AppName' to name of choice.
 # => Update 'AppName' : config.ru // spec_helper.rb
@@ -68,7 +69,9 @@ module AppName
     get '/overview_stats.json' do
       if authenticated?
         content_type :json
-        { needs_priority: 4, issues_last_7: 5 }.to_json
+        client = github_user.api
+        client.auto_paginate = true
+        Overview.get_links(client).to_json
       else 
         redirect '/'
       end
