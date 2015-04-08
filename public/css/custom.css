@@ -50,12 +50,7 @@
   font-size: 70px;
 }
 
-.homepage {
-  height: 100%;
-  width: 100%;
-}
-
-.homepage, .overview {
+.homepage, .overview, .ui.active.dimmer {
   height: 100%;
   width: 100%;
   background: #004b72;
@@ -66,8 +61,50 @@
   background: radial-gradient(ellipse at center bottom, #004b72 0%,#002335 100%);
 }
 
+.ui.active.dimmer {
+  z-index: 1000;
+}
+
 /*OVERVIEW*/
 
-.ui.menu .item > i.icon.home {
-  margin-left: 10px;
+.overview-stats-container {
+  position: relative;
+  top: 40%;
+  transform: translateY(-40%);
 }
+
+.overview .ui.menu .item > i.icon {
+  margin-left: 10px;
+  opacity: 1;
+  color: white;
+}
+
+.overview .ui.menu .item {
+  color: white;
+  opacity: 1;
+}
+
+.overview .ui.menu .item:hover {
+  color: white;
+}
+
+.overview .ui.segment {
+  background: none;
+  box-shadow: none;
+  border: 1px solid rgba(0,0,0,0);
+}
+
+.overview .ui.segment:hover {
+  cursor: pointer;
+  border: 1px solid #B2C2CA;
+}
+
+.overview .ui.statistic > .value {
+  color: white;
+}
+
+.overview .ui.statistic > .label {
+  color: white;
+  opacity: 0.7;
+}
+
