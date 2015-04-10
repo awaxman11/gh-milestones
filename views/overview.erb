@@ -79,7 +79,6 @@
 
 $.ajax('overview_stats.json', {
   success: function(response) {
-    console.log("Success!");
     response_keys = Object.keys(response)
 
     _.each($('.statistic.segment'), function(value){
@@ -88,7 +87,6 @@ $.ajax('overview_stats.json', {
       if (_.contains(response_keys, stat)){
         $("div[data-stat='"+stat+"']").children('.value').html(response[stat].count)
         $("div[data-stat='"+stat+"']").data('link', response[stat].link)
-        console.log(stat)
       }
     });
     $('div.active.dimmer').fadeOut(400);
