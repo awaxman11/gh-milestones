@@ -14,6 +14,7 @@ gem 'sinatra-redirect-with-flash'
 gem 'sinatra_auth_github'         # oauth w/ Github capability
 
 gem 'rake'
+gem 'mechanize'
 
 group :development, :test do
   gem 'tux'                       # CLI for models / methods.

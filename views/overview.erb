@@ -12,7 +12,7 @@
   <div class="overview-stats-container">
 
     <div class="ui twelve column doubling centered grid">
-      <div class="three wide column ui huge statistic segment" data-stat ="no_priority" data-link="">
+      <div class="three wide column ui huge statistic segment" data-stat ="no_priority">
         <div class="value">
           42
         </div>
@@ -20,7 +20,7 @@
           need priority
         </div>
       </div>
-      <div class="three wide column ui huge statistic segment" data-stat ="issues_this_week">
+      <div class="three wide column ui huge statistic segment" data-stat ="since_mon">
         <div class="value">
           42
         </div>
@@ -80,6 +80,7 @@
 $.ajax('overview_stats.json', {
   success: function(response) {
     response_keys = Object.keys(response)
+    console.log(response_keys)
 
     _.each($('.statistic.segment'), function(value){
       stat = $(value).data('stat')

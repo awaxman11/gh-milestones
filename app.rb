@@ -9,9 +9,8 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'cgi'
 
-# require 'nokogiri'
-# require 'open-uri'
 require 'json'
+require 'mechanize'
 
 require_relative 'environment'
 
