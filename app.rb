@@ -103,6 +103,26 @@ module AppName
       end
     end
 
+    get '/categories.json' do
+      if authenticated?
+        content_type :json
+        client = github_user.api
+        client.auto_paginate = true
+        # Overview.get_links(client).to_json
+        {:test => "hello"}.to_json
+      else 
+        redirect '/'
+      end
+    end
+
+    get '/categories' do 
+      if authenticated?
+        erb :categories, :locals => {main_nav: false, back_button: false}
+      else 
+        redirect '/'
+      end
+    end
+
     get '/logout' do
       logout!
       redirect '/'

@@ -50,7 +50,7 @@
   font-size: 70px;
 }
 
-.homepage, .overview, .ui.active.dimmer {
+.homepage, .overview, .categories, .ui.active.dimmer {
   height: 100%;
   width: 100%;
   background: #004b72;
@@ -73,18 +73,18 @@
   transform: translateY(-40%);
 }
 
-.overview .ui.menu .item > i.icon {
+.overview .ui.menu .item > i.icon, .categories .ui.menu .item > i.icon {
   margin-left: 10px;
   opacity: 1;
   color: white;
 }
 
-.overview .ui.menu .item {
+.overview .ui.menu .item, .categories .ui.menu .item {
   color: white;
   opacity: 1;
 }
 
-.overview .ui.menu .item:hover {
+.overview .ui.menu .item:hover, .categories .ui.menu .item:hover {
   color: white;
 }
 
