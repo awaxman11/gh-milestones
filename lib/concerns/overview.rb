@@ -78,7 +78,7 @@ class Overview
     m = now.month
     d = now.day
     today_at_9 = DateTime.new(y, m, d, 9, 0)
-    return today_at_9 - today_at_9.wday + 1
+    return today_at_9 - (today_at_9 - 1).wday
   end
 
 end
