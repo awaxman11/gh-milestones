@@ -10,6 +10,25 @@
   </div>
 
   <div class="categories-container">
+
+   <div class="ui search">
+      <div class="ui icon input">
+        <input class="search" type="search" placeholder="Search" data-column="all">
+        <i class="search icon"></i>
+      </div>
+    </div>
+
+
+    <table class="ui unstackable compact table tablesorter">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th class="{sorter: 'digit'}"># of Issues</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
   </div>
 
 </div>
@@ -20,18 +39,45 @@
 
 <script type="text/javascript">
 
-$.ajax('categories.json', {
-  success: function(response) {
+$(document).ready(function(){
 
-    console.log(response)
+  $.ajax('categories.json', {
+    success: function(response) {
 
-    $('div.active.dimmer').fadeOut(400);
-    $('.categories').fadeIn(1000);
-  },
-  error: function(response) {
-    console.log("Error :(")
-  }
-});
+      console.log(response)
+      console.log(Object.keys(response).length)
+      console.log(typeof(repsonse))
+
+      _.each(response, function(value, key, response){
+        row = "<tr><td>"+key+"</td><td data-sort-value="+ value+ ">"+value+"</td></tr>"
+        $('.categories table tbody').prepend(row)
+
+      })
+
+      $('div.active.dimmer').fadeOut(400);
+      $('.categories').fadeIn(1000);
+      var $table = $("table").tablesorter({
+        sortList: [[1,1]],
+        widgets: ["filter"],
+        widgetOptions : {
+          // use the filter_external option OR use bindSearch function (below)
+          // to bind external filters.
+          filter_external : '.search',
+
+          filter_columnFilters: false,
+          filter_liveSearch: true
+        }
+      })
+
+      $.tablesorter.filter.bindSearch( $table, $('.search') );
+
+    },
+    error: function(response) {
+      console.log("Error :(")
+    }
+  });
+
+})
 
 
 </script>

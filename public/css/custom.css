@@ -108,3 +108,26 @@
   opacity: 0.7;
 }
 
+/*CATEGORIES*/
+
+.categories-container {
+  padding: 20px 40px; 
+}
+
+.categories {
+  overflow:auto;
+}
+
+.categories table {
+  background: none !important;
+  color: white !important;
+}
+
+.categories .ui.table thead th {
+  background: none !important;
+  color: #9AADB6;
+}
+
+.categories .ui.table tr.filtered {
+  display: none;
+}

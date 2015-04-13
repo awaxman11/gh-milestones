@@ -19,6 +19,7 @@ require 'sinatra/redirect_with_flash'
 require './lib/sinatra/auth/github.rb'
 require './lib/concerns/milestone.rb'
 require './lib/concerns/overview.rb'
+require './lib/concerns/category.rb'
 
 # Rename 'AppName' to name of choice.
 # => Update 'AppName' : config.ru // spec_helper.rb
@@ -73,16 +74,20 @@ module AppName
     end
 
     get '/overview' do
-      erb :overview, :locals => {main_nav: false, back_button: false}
+      if authenticated?
+        erb :overview, :locals => {main_nav: false, back_button: false}
+      else 
+        redirect '/'
+      end
     end
 
     get '/milestones' do
       if authenticated?
         client = github_user.api
         client.auto_paginate = true
-        @milestones = client.list_milestones("seatgeek/tixcast")
-        @milestones.sort! { |a,b| a[:title].downcase <=> b[:title].downcase }
-        erb :milestones, :locals => { milestones: @milestones, main_nav: true, back_button: false}
+        milestones = client.list_milestones("seatgeek/tixcast")
+        milestones.sort! { |a,b| a[:title].downcase <=> b[:title].downcase }
+        erb :milestones, :locals => { milestones: milestones, main_nav: true, back_button: false}
       else
         redirect '/'
       end
@@ -108,8 +113,11 @@ module AppName
         content_type :json
         client = github_user.api
         client.auto_paginate = true
-        # Overview.get_links(client).to_json
-        {:test => "hello"}.to_json
+        # c = Category.new("seatgeek/tixcast", client)
+        # categories = c.categories
+        categories = Category.categories
+        # categories
+        categories
       else 
         redirect '/'
       end
