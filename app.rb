@@ -113,11 +113,9 @@ module AppName
         content_type :json
         client = github_user.api
         client.auto_paginate = true
-        # c = Category.new("seatgeek/tixcast", client)
-        # categories = c.categories
-        categories = Category.categories
-        # categories
-        categories
+        c = Category.new("seatgeek/tixcast", client)
+        categories = c.categories
+        categories.to_json
       else 
         redirect '/'
       end
