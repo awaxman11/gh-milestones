@@ -9,7 +9,7 @@ class Overview
 
     login
 
-    add_link("no_priority", "https://github.com/seatgeek/tixcast/issues?utf8=%E2%9C%93&q=is%3Aopen+-label%3A%22priority%3A+high%22+-label%3A%22priority%3A+normal%22+-label%3A%22priority%3A+low%22++-label%3A%22Postmortem%22++-label%3A%22Project%22++-label%3A%22team%3A+mapping%22++-label%3A%22Good+for+technical+debt+day%22++-label%3A%22team%3A+data%22+-label%3A%22team%3A+ops%22++created%3A%3E2015-01-01+repo%3Aseatgeek%2Ftixcast", "need priority")
+    add_link("no_priority", "https://github.com/seatgeek/tixcast/issues?utf8=%E2%9C%93&q=is%3Aopen+-label%3A%22priority%3A+high%22+-label%3A%22priority%3A+normal%22+-label%3A%22priority%3A+low%22++-label%3A%22type%3A+postmortem%22++-label%3A%22type%3A+project%22++-label%3A%22team%3A+mapping%22++-label%3A%22Good+for+technical+debt+day%22++-label%3A%22team%3A+data%22+-label%3A%22team%3A+ops%22++created%3A%3E2015-01-01+repo%3Aseatgeek%2Ftixcast", "need priority")
 
     since_mon_needs_pts_link = 'https://github.com/seatgeek/tixcast/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen++-label%3A%22size%3A+0.5%22+-label%3A%22size%3A+1%22+-label%3A%22size%3A+2%22++-label%3A%22size%3A+3%22++-label%3A%22size%3A+4%22++-label%3A%22size%3A+5%22++-label%3A%22size%3A+6%22++-label%3A%22size%3A+7%22++-label%3A%22size%3A+8%22++-label%3A%22size%3A+10%22++-label%3Aproject+-label%3Apostmortem' + CGI.escape(created(">",monday_morning))
     add_link(:since_mon_needs_pts, since_mon_needs_pts_link, "need pts this week")
