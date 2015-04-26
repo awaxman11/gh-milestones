@@ -12,56 +12,56 @@
   <div class="overview-stats-container">
 
     <div class="ui twelve column doubling centered grid">
-      <div class="three wide column ui huge statistic segment" data-stat ="no_priority">
+      <a class="three wide column ui huge statistic segment" data-stat ="no_priority" target="_blank">
         <div class="value">
           42
         </div>
         <div class="label">
           tbd
         </div>
-      </div>
-      <div class="three wide column ui huge statistic segment" data-stat ="since_mon_needs_pts">
+      </a>
+      <a class="three wide column ui huge statistic segment" data-stat ="since_mon_needs_pts" target="_blank">
         <div class="value">
           42
         </div>
         <div class="label">
           tbd
         </div>
-      </div>
-      <div class="three wide column ui huge statistic segment" data-stat ="since_mon">
+      </a>
+      <a class="three wide column ui huge statistic segment" data-stat ="since_mon" target="_blank">
         <div class="value">
           42
         </div>
         <div class="label">
           TBD
         </div>
-      </div>
+      </a>
     </div>
     <div class="ui twelve column doubling centered grid">
-      <div class="three wide column ui huge statistic segment" data-stat ="high_priority">
+      <a class="three wide column ui huge statistic segment" data-stat ="high_priority" target="_blank">
         <div class="value">
           42
         </div>
         <div class="label">
           TBD
         </div>
-      </div>
-      <div class="three wide column ui huge statistic segment" data-stat="hp_30_days">
+      </a>
+      <a class="three wide column ui huge statistic segment" data-stat="hp_30_days" target="_blank">
         <div class="value">
           42
         </div>
         <div class="label">
           TBD
         </div>
-      </div>
-      <div class="three wide column ui huge statistic segment" data-stat="np_365_days">
+      </a>
+      <a class="three wide column ui huge statistic segment" data-stat="np_365_days" target="_blank">
         <div class="value">
           42
         </div>
         <div class="label">
           TBD
         </div>
-      </div>
+      </a>
     </div>
   
   </div>
@@ -86,9 +86,9 @@ $.ajax('overview_stats.json', {
       stat = $(value).data('stat')
       
       if (_.contains(response_keys, stat)){
-        $("div[data-stat='"+stat+"']").children('.value').html(response[stat].count)
-        $("div[data-stat='"+stat+"']").children('.label').html(response[stat].label)
-        $("div[data-stat='"+stat+"']").data('link', response[stat].link)
+        $("a[data-stat='"+stat+"']").children('.value').html(response[stat].count)
+        $("a[data-stat='"+stat+"']").children('.label').html(response[stat].label)
+        $("a[data-stat='"+stat+"']").attr('href', response[stat].link)
       }
     });
     $('div.active.dimmer').fadeOut(400);
@@ -99,9 +99,6 @@ $.ajax('overview_stats.json', {
   }
 });
 
-$('.statistic.segment').click(function(){
-  window.location = ($(this).data('link'));
-})
 
 
 
