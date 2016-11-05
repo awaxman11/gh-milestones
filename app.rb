@@ -134,6 +134,50 @@ module AppName
       redirect '/'
     end
 
+    # Routes related to new triaging pages
+
+    get '/triage' do
+      erb :triage, :locals => { main_nav: false, back_button: false }
+    end
+
+    get '/triage/all-issues' do
+      if authenticated?
+        erb :triage_all_issues, :locals => {main_nav: false, back_button: false}
+      else 
+        redirect '/'
+      end
+    end
+
+    get '/triage_stats_all_issues.json' do
+      if authenticated?
+        content_type :json
+        client = github_user.api
+        client.auto_paginate = true
+        Overview.get_triage_stats_all_issues_links(client).to_json
+      else 
+        redirect '/'
+      end
+    end
+
+    get '/triage/stale-issues' do
+      if authenticated?
+        erb :triage_stale_issues, :locals => {main_nav: false, back_button: false}
+      else 
+        redirect '/'
+      end
+    end
+
+    get '/triage_stats_stale_issues.json' do
+      if authenticated?
+        content_type :json
+        client = github_user.api
+        client.auto_paginate = true
+        Overview.get_triage_stats_stale_issues_links(client).to_json
+      else 
+        redirect '/'
+      end
+    end
+
     # Helpers
     # => define helper methods.
 

@@ -11,14 +11,12 @@
     <i class="github icon"></i>
   </div>
 
-  <h2 class="ui center aligned header"><%= warden.authenticated? ? "Welcome!" : "Milestone Dashboard" %></h2>
+  <h2 class="ui center aligned header"><%= warden.authenticated? ? "It's Triaging Time!" : "Milestone Dashboard" %></h2>
 
     <div class="login-container ui center aligned icon header">
       <% if warden.authenticated? %>
-          <a href="/overview" class="ui large primary button">Overview</a>
-          <a href="/milestones" class="ui large primary button">Milestones</a>
-          <a href="/categories" class="ui large primary button">Categories</a>
-          <a href="/triage" class="ui large primary button">Triage Issues</a>
+          <a href="/triage/all-issues" class="ui large primary button">All issues</a>
+          <a href="/triage/stale-issues" class="ui large primary button">7+ days since last updated</a>
       <% else %>
         <a href="/login" class="large ui primary button">Login</a>
       <% end %>
